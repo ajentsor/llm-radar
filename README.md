@@ -7,7 +7,7 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org)
 [![Updated Daily](https://img.shields.io/badge/data-updated%20daily-brightgreen.svg)](data/)
-[![Claude Code Skill](https://img.shields.io/badge/claude%20code-skill-purple.svg)](.claude/skills/llm-radar/)
+[![Claude Code Skill](https://img.shields.io/badge/claude%20code-skill-purple.svg)](SKILL.md)
 
 **Stop guessing which AI model to use. Get the data.**
 
@@ -141,20 +141,20 @@ Each model includes:
 ## Project Structure
 
 ```
-llm-radar/
-├── .github/workflows/
-│   └── update-models.yml    # Daily cron using Claude
-├── .claude/skills/llm-radar/
-│   ├── SKILL.md             # Claude Code skill
-│   └── scripts/query.py     # Query helper
+llm-radar/                   # Clone directly to ~/.claude/skills/llm-radar
+├── SKILL.md                 # Claude Code skill definition
+├── scripts/
+│   └── query.py             # Query helper script
 ├── data/
-│   ├── models.json          # Structured data
+│   ├── models.json          # Structured model data
 │   ├── MODELS.md            # Human-readable reference
 │   └── raw/                 # Raw API responses
 ├── src/
 │   ├── fetch_models.py      # API fetchers
 │   └── aggregate_with_claude.py  # Claude enrichment
 ├── docs/                    # GitHub Pages site
+├── .github/workflows/
+│   └── update-models.yml    # Daily cron using Claude
 └── README.md
 ```
 

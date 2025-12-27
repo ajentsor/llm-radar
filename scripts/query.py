@@ -10,7 +10,7 @@ from pathlib import Path
 
 # Find the data directory relative to this script
 SCRIPT_DIR = Path(__file__).parent
-DATA_FILE = SCRIPT_DIR.parent.parent.parent.parent / "data" / "models.json"
+DATA_FILE = SCRIPT_DIR.parent / "data" / "models.json"
 
 
 def load_models():

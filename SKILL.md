@@ -63,7 +63,7 @@ Read the `summary` field from `data/models.json` and highlight recent releases.
 For complex queries, use the helper script:
 
 ```bash
-python3 .claude/skills/llm-radar/scripts/query.py "cheapest model with vision"
+python3 scripts/query.py "cheapest model with vision"
 ```
 
 ## Important Notes
