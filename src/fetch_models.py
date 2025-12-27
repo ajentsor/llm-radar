@@ -35,7 +35,7 @@ def fetch_openai_models() -> dict:
         data = response.json()
 
         # Filter to relevant models (GPT, o1, o3, etc.)
-        relevant_prefixes = ("gpt-4", "gpt-3.5", "o1", "o3", "chatgpt")
+        relevant_prefixes = ("gpt-5", "gpt-4", "gpt-3.5", "o1", "o3", "o4", "chatgpt")
         models = [
             m for m in data.get("data", [])
             if any(m["id"].startswith(p) for p in relevant_prefixes)
