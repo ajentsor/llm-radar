@@ -1,17 +1,19 @@
-# AI Models Overview 🤖
+# AI Models Overview
 
-**Last Updated:** December 27, 2024
+**Last Updated:** December 27, 2025
 
-OpenAI introduces new GPT-4.1 series and O3 models, while Anthropic launches Claude 4.5 series. Google maintains comprehensive Gemini 2.0/2.5 lineup with thinking capabilities.
+OpenAI introduces GPT-4.1 series models and O3 reasoning model. New models include gpt-4.1-nano (smallest), gpt-4.1-mini, and full gpt-4.1, plus the advanced O3 model for complex reasoning tasks.
+
+---
 
 ## 🌟 Highlights
 
-| Category | Model | Key Feature |
-|----------|-------|-------------|
-| **Most Cost-Effective** | `google/gemini-2.0-flash` | $0.1 input/$0.4 output with 1M context and multimodal capabilities |
-| **Most Powerful** | `openai/gpt-4.1` | Latest flagship with enhanced reasoning capabilities |
-| **Best for Code** | `openai/o3` | Advanced reasoning model optimized for complex problem-solving |
-| **Largest Context** | `google/gemini-2.5-pro` | 1,048,576 tokens with thinking capabilities |
+| Use Case | Recommended Model | Why |
+|----------|------------------|-----|
+| **Most Cost-Effective** | Gemini 2.0 Flash | Excellent capabilities at $0.1/$0.4 per 1M tokens with 1M context |
+| **Most Powerful** | Claude 4.5 Opus | Latest flagship with exceptional reasoning and analysis |
+| **Best for Code** | GPT-4.1 | Latest model with improved coding and reasoning capabilities |
+| **Largest Context** | Gemini 2.5 Pro | 1,048,576 tokens with advanced reasoning and thinking |
 
 ---
 
@@ -19,35 +21,74 @@ OpenAI introduces new GPT-4.1 series and O3 models, while Anthropic launches Cla
 
 **Website:** [openai.com](https://openai.com)
 
-### GPT-4.1 Series (Latest)
+### GPT-4.1 Series
 
-| Model | Context | Pricing (per 1M tokens) | Released | Description |
-|-------|---------|------------------------|----------|-------------|
-| **GPT-4.1** | TBD | TBD | Apr 14, 2025 | Latest flagship model with enhanced reasoning and general capabilities |
-| **GPT-4.1 Mini** | TBD | TBD | Apr 14, 2025 | Smaller, faster version of GPT-4.1 for efficient tasks |
+| Model | Context | Pricing (Input/Output per 1M tokens) | Released |
+|-------|---------|--------------------------------------|----------|
+| **GPT-4.1** | TBA | TBA | April 14, 2025 |
+| **GPT-4.1 Mini** | TBA | TBA | April 14, 2025 |
+| **GPT-4.1 Nano** | TBA | TBA | April 14, 2025 |
 
-**Capabilities:** ![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Streaming](https://img.shields.io/badge/Streaming-orange) ![Reasoning](https://img.shields.io/badge/Reasoning-purple) ![Code](https://img.shields.io/badge/Code-red)
+#### GPT-4.1
+Latest flagship model with improved reasoning and knowledge across all domains.
 
-### O Series (Reasoning-Focused)
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
 
-| Model | Context | Pricing (Input/Output) | Released | Best For |
-|-------|---------|----------------------|----------|----------|
-| **O3** | TBD | TBD | Apr 16, 2025 | Complex reasoning, scientific problems |
-| **O3 Mini** | TBD | $1.1/$4.4 | Jan 31, 2025 | Cost-effective reasoning tasks |
-| **O1 Pro** | 200K | $150/$600 | Mar 19, 2025 | Advanced research, complex analysis |
-| **O1** | 200K | $15/$60 | Dec 17, 2024 | Complex reasoning, technical problems |
+**Best for:** Complex tasks requiring advanced reasoning and analysis
 
-**Capabilities:** ![Reasoning](https://img.shields.io/badge/Reasoning-purple) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Streaming](https://img.shields.io/badge/Streaming-orange) ![Code](https://img.shields.io/badge/Code-red)
+#### GPT-4.1 Mini
+Compact version of GPT-4.1 optimized for speed and cost efficiency.
 
-### GPT-4 Series
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
 
-| Model | Context | Pricing (Input/Output) | Best For |
-|-------|---------|----------------------|----------|
-| **GPT-4o** | 128K | $2.5/$10 | Multimodal applications, general chat |
-| **GPT-4o Mini** | 128K | $0.15/$0.6 | Cost-effective applications, chatbots |
-| **GPT-4 Turbo** | 128K | $10/$30 | Large context applications |
-| **GPT-4** | 8K | $30/$60 | High-quality text tasks |
-| **GPT-3.5 Turbo** | 16K | $0.5/$1.5 | Simple chat, basic automation |
+**Best for:** Fast general-purpose tasks with good reasoning capabilities
+
+#### GPT-4.1 Nano
+Ultra-compact model for lightweight applications requiring GPT-4 level capabilities.
+
+![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
+
+**Best for:** High-volume, cost-sensitive applications
+
+### Reasoning Models (O Series)
+
+| Model | Pricing (Input/Output per 1M tokens) | Released |
+|-------|--------------------------------------|----------|
+| **O3** | TBA | April 16, 2025 |
+| **O3 Mini** | $1.1 / $4.4 | January 31, 2025 |
+| **O1 Pro** | $150.0 / $600.0 | March 19, 2025 |
+| **O1** | $15.0 / $60.0 | December 17, 2024 |
+
+#### O3
+Advanced reasoning model designed for complex problem-solving and deep analysis.
+
+![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
+
+**Best for:** Complex reasoning, research, and analytical tasks
+
+#### O3 Mini
+Efficient reasoning model balancing performance with cost for analytical tasks.
+
+![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
+
+**Best for:** Cost-effective reasoning and problem-solving
+
+### GPT-4 Family
+
+| Model | Context | Pricing (Input/Output per 1M tokens) | Released |
+|-------|---------|--------------------------------------|----------|
+| **GPT-4 Omni** | 128K | $2.5 / $10.0 | May 13, 2024 |
+| **GPT-4 Omni Mini** | 128K | $0.15 / $0.6 | July 18, 2024 |
+| **GPT-4 Turbo** | 128K | $10.0 / $30.0 | April 9, 2024 |
+| **GPT-4** | 8K | $30.0 / $60.0 | March 14, 2023 |
+| **GPT-3.5 Turbo** | 16K | $0.5 / $1.5 | March 1, 2023 |
+
+#### GPT-4 Omni
+Flagship multimodal model with vision, audio, and text capabilities.
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Audio](https://img.shields.io/badge/Audio-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
+
+**Best for:** Multimodal tasks, vision analysis, and general chat
 
 ---
 
@@ -55,29 +96,48 @@ OpenAI introduces new GPT-4.1 series and O3 models, while Anthropic launches Cla
 
 **Website:** [anthropic.com](https://anthropic.com)
 
-### Claude 4.5 Series (Latest)
+### Claude 4.5 Series
 
-| Model | Context | Pricing | Released | Description |
-|-------|---------|---------|----------|-------------|
-| **Claude Opus 4.5** | 200K | TBD | Nov 1, 2025 | Most powerful Claude model with advanced reasoning and analysis |
-| **Claude Sonnet 4.5** | 200K | TBD | Sep 29, 2025 | Balanced model optimizing capability and efficiency |
-| **Claude Haiku 4.5** | 200K | TBD | Oct 1, 2025 | Fast, efficient model for quick responses |
+| Model | Context | Pricing (Input/Output per 1M tokens) | Released |
+|-------|---------|--------------------------------------|----------|
+| **Claude 4.5 Opus** | 200K | TBA | November 1, 2025 |
+| **Claude 4.5 Sonnet** | 200K | TBA | September 29, 2025 |
+| **Claude 4.5 Haiku** | 200K | TBA | October 1, 2025 |
 
-**Capabilities:** ![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Reasoning](https://img.shields.io/badge/Reasoning-purple) ![Code](https://img.shields.io/badge/Code-red) ![Analysis](https://img.shields.io/badge/Analysis-yellow)
+#### Claude 4.5 Opus
+Most powerful Claude model with exceptional reasoning and complex task handling.
 
-### Claude 4.0 Series
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green) ![Long Context](https://img.shields.io/badge/Long%20Context-✓-blue)
 
-| Model | Context | Pricing (Input/Output) | Best For |
-|-------|---------|----------------------|----------|
-| **Claude Opus 4** | 200K | $15/$75 | Complex reasoning, detailed analysis |
-| **Claude Sonnet 4** | 200K | $3/$15 | General chat, coding assistance |
+**Best for:** Complex analysis, research, and professional writing
 
-### Claude 3.x Series
+#### Claude 4.5 Sonnet
+Balanced model offering strong performance across diverse tasks.
 
-| Model | Context | Pricing (Input/Output) | Best For |
-|-------|---------|----------------------|----------|
-| **Claude 3.5 Haiku** | 200K | $0.8/$4 | Quick responses, cost-effective tasks |
-| **Claude 3 Haiku** | 200K | $0.25/$1.25 | Simple queries, fast processing |
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green) ![Long Context](https://img.shields.io/badge/Long%20Context-✓-blue)
+
+**Best for:** Versatile applications requiring good reasoning
+
+### Claude 4 Series
+
+| Model | Context | Pricing (Input/Output per 1M tokens) | Released |
+|-------|---------|--------------------------------------|----------|
+| **Claude 4 Opus** | 200K | $15.0 / $75.0 | May 14, 2025 |
+| **Claude 4 Sonnet** | 200K | $3.0 / $15.0 | May 14, 2025 |
+
+### Claude 3 Series
+
+| Model | Context | Pricing (Input/Output per 1M tokens) | Released |
+|-------|---------|--------------------------------------|----------|
+| **Claude 3.5 Haiku** | 200K | $0.8 / $4.0 | October 22, 2024 |
+| **Claude 3 Haiku** | 200K | $0.25 / $1.25 | March 7, 2024 |
+
+#### Claude 3.5 Haiku
+Fast and cost-effective model for quick responses and simple tasks.
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green) ![Long Context](https://img.shields.io/badge/Long%20Context-✓-blue)
+
+**Best for:** Fast responses and cost-sensitive applications
 
 ---
 
@@ -85,40 +145,41 @@ OpenAI introduces new GPT-4.1 series and O3 models, while Anthropic launches Cla
 
 **Website:** [ai.google.dev](https://ai.google.dev)
 
-### Gemini 2.5 Series (Latest)
+### Gemini 2.5 Series
 
-| Model | Context | Pricing | Released | Description |
-|-------|---------|---------|----------|-------------|
-| **Gemini 2.5 Pro** | 1M | TBD | Jun 17, 2025 | Most capable Gemini model with advanced reasoning and thinking |
-| **Gemini 2.5 Flash** | 1M | TBD | Jun 1, 2025 | Mid-size multimodal model with thinking capabilities |
+| Model | Context | Pricing (Input/Output per 1M tokens) | Released |
+|-------|---------|--------------------------------------|----------|
+| **Gemini 2.5 Flash** | 1M | TBA | June 1, 2025 |
+| **Gemini 2.5 Pro** | 1M | TBA | June 17, 2025 |
 
-**Capabilities:** ![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Streaming](https://img.shields.io/badge/Streaming-orange) ![Reasoning](https://img.shields.io/badge/Reasoning-purple) ![Code](https://img.shields.io/badge/Code-red) ![Thinking](https://img.shields.io/badge/Thinking-cyan)
+#### Gemini 2.5 Pro
+Most capable Gemini model with advanced reasoning and thinking abilities.
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green) ![Thinking](https://img.shields.io/badge/Thinking-✓-purple) ![Long Context](https://img.shields.io/badge/Long%20Context-✓-blue)
+
+**Best for:** Professional applications requiring advanced reasoning
+
+#### Gemini 2.5 Flash
+Advanced multimodal model with thinking capabilities and large context window.
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green) ![Thinking](https://img.shields.io/badge/Thinking-✓-purple) ![Long Context](https://img.shields.io/badge/Long%20Context-✓-blue)
+
+**Best for:** Complex reasoning with very large contexts
 
 ### Gemini 2.0 Series
 
-| Model | Context | Pricing (Input/Output) | Best For |
-|-------|---------|----------------------|----------|
-| **Gemini 2.0 Flash** | 1M | $0.1/$0.4 | General applications, multimodal tasks |
-| **Gemini 2.0 Flash Lite** | 1M | TBD | Cost-effective multimodal applications |
+| Model | Context | Pricing (Input/Output per 1M tokens) | Released |
+|-------|---------|--------------------------------------|----------|
+| **Gemini 2.0 Flash** | 1M | $0.1 / $0.4 | January 1, 2025 |
+| **Gemini 2.0 Flash Lite** | 1M | TBA | February 5, 2025 |
 
-**Capabilities:** ![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Streaming](https://img.shields.io/badge/Streaming-orange) ![Code](https://img.shields.io/badge/Code-red)
+#### Gemini 2.0 Flash
+Fast and versatile multimodal model for scaling across diverse tasks.
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green) ![Long Context](https://img.shields.io/badge/Long%20Context-✓-blue)
+
+**Best for:** Fast multimodal applications with large contexts
 
 ---
 
-## Quick Selection Guide
-
-### By Budget
-- **Ultra-low cost:** GPT-4o Mini ($0.15/$0.6) or Claude 3 Haiku ($0.25/$1.25)
-- **Best value:** Gemini 2.0 Flash ($0.1/$0.4) with 1M context
-- **Premium:** O1 Pro ($150/$600) for complex reasoning
-
-### By Use Case
-- **Code generation:** O3, GPT-4.1, or Gemini 2.5 Pro with thinking
-- **General chat:** GPT-4o, Claude Sonnet 4.5, or Gemini 2.0 Flash
-- **Research & analysis:** Claude Opus 4.5, O1 Pro, or Gemini 2.5 Pro
-- **Large documents:** Any Gemini model (1M context) or Claude series (200K)
-
-### By Capability
-- **Vision:** All models except O series and GPT-3.5 Turbo
-- **Function calling:** All models except Claude 3 Haiku
-- **Advanced reasoning:** O series, GPT-4.1, Claude 4.5 Opus, Gemini 2.5 Pro
+*All pricing shown per 1 million tokens. Context windows: K = thousand tokens, M = million tokens.*
