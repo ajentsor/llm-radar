@@ -1,170 +1,246 @@
-# Latest AI Models for Developers
+# AI Models Directory
 
 **Last Updated:** December 27, 2025
 
-OpenAI has released GPT-5.2 and GPT-5.2 Pro models with new TTS and transcription variants. Google continues with Gemini 2.x series including Flash-Lite variants, while Anthropic maintains Claude 4.x lineup.
+Major updates include new GPT-5.2 models with Pro variant, GPT-5.1 Codex specializations, and Google's Gemini 3 preview models. OpenAI continues expanding GPT-5 family while Google advances to Gemini 3 generation.
 
-## 🌟 Model Highlights
+## 🌟 Highlights
 
-| Category | Model | Why It Stands Out |
-|----------|-------|------------------|
-| **Most Powerful** | GPT-5.2 Pro | OpenAI's flagship with advanced reasoning and professional capabilities |
-| **Best Value** | Gemini 2.0 Flash | Excellent multimodal capabilities at just $0.1/$0.4 per 1M tokens |
-| **Code Specialist** | GPT-5.1 Codex Max | Specialized for advanced software development and debugging |
-| **Largest Context** | Gemini 2.5 Pro | 1M+ token context window with thinking capabilities |
+| Use Case | Recommended Model | Key Benefits |
+|----------|-------------------|-------------|
+| **Most Cost-Effective** | [Gemini 2.0 Flash](#gemini-20-flash) | $0.1/M input tokens, multimodal capabilities |
+| **Most Powerful** | [GPT-5.2 Pro](#gpt-52-pro) | Latest flagship with advanced reasoning |
+| **Best for Code** | [GPT-5.1 Codex Max](#gpt-51-codex-max) | Specialized maximum-capability coding |
+| **Largest Context** | [Gemini 2.5 Pro](#gemini-25-pro) | 1M tokens with advanced reasoning |
 
 ---
 
 ## OpenAI
 
-**Website:** [openai.com](https://openai.com)
+*Website: [openai.com](https://openai.com)*
 
 ### GPT-5 Series
 
-| Model | Context | Pricing (Input/Output per 1M tokens) | Released | Status |
-|-------|---------|---------------------------------------|----------|--------|
-| **GPT-5.2 Pro** | - | $3.50 / $28.00 | Dec 11, 2025 | ✅ Active |
-| **GPT-5.2** | - | $1.75 / $14.00 | Dec 11, 2025 | ✅ Active |
-| **GPT-5.1** | - | $1.25 / $10.00 | Nov 13, 2025 | ✅ Active |
-| **GPT-5** | - | $1.00 / $8.00 | Aug 7, 2025 | ✅ Active |
-
 #### GPT-5.2 Pro
-Most powerful OpenAI model for complex reasoning and professional tasks.
+Enhanced version of GPT-5.2 optimized for complex reasoning and professional tasks
 
-![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Streaming](https://img.shields.io/badge/Streaming-orange) ![Reasoning](https://img.shields.io/badge/Reasoning-purple) ![Code](https://img.shields.io/badge/Code-red) ![Web Search](https://img.shields.io/badge/Web%20Search-cyan)
+- **Context:** Not specified
+- **Pricing:** $3.50 input / $28.00 output (per 1M tokens)
+- **Released:** December 11, 2025
+- **Best for:** Professional workflows, complex analysis
 
-**Best for:** Complex analysis, professional writing, advanced reasoning
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
 
 #### GPT-5.2
-Latest flagship GPT model with enhanced capabilities.
+Latest flagship model with advanced reasoning and multimodal capabilities
 
-![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Streaming](https://img.shields.io/badge/Streaming-orange) ![Reasoning](https://img.shields.io/badge/Reasoning-purple) ![Code](https://img.shields.io/badge/Code-red) ![Web Search](https://img.shields.io/badge/Web%20Search-cyan)
+- **Context:** Not specified
+- **Pricing:** $1.75 input / $14.00 output (per 1M tokens)
+- **Released:** December 11, 2025
+- **Best for:** General chat, advanced reasoning tasks
 
-**Best for:** General chat, content creation, code generation
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
 
 #### GPT-5.1 Codex Max
-Specialized for advanced code generation and software development.
+Maximum capability version of GPT-5.1 specialized for complex coding tasks
 
-![Code](https://img.shields.io/badge/Code-red) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Streaming](https://img.shields.io/badge/Streaming-orange)
+- **Context:** Not specified
+- **Pricing:** Contact for pricing
+- **Released:** January 20, 2025
+- **Best for:** Complex software development, architecture
 
-**Best for:** Complex software development, code review, debugging
+![Code](https://img.shields.io/badge/Code-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green)
+
+#### GPT-5.1 Codex
+Code-specialized version of GPT-5.1 for programming and development tasks
+
+- **Context:** Not specified
+- **Pricing:** Contact for pricing
+- **Released:** January 17, 2025
+- **Best for:** Code generation, debugging, programming
+
+![Code](https://img.shields.io/badge/Code-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green)
+
+#### GPT-5.1
+Advanced GPT-5 series model with improved reasoning and efficiency
+
+- **Context:** Not specified
+- **Pricing:** $1.25 input / $10.00 output (per 1M tokens)
+- **Released:** January 10, 2025
+- **Best for:** General purpose, reasoning tasks
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
+
+#### GPT-5
+First model in the GPT-5 series with breakthrough reasoning capabilities
+
+- **Context:** Not specified
+- **Pricing:** $1.00 input / $8.00 output (per 1M tokens)
+- **Released:** August 7, 2025
+- **Best for:** Advanced reasoning, general purpose
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
 
 ### Reasoning Models (o-series)
 
-| Model | Pricing (Input/Output per 1M tokens) | Released | Specialty |
-|-------|---------------------------------------|----------|-----------|
-| **o1 Pro** | $150.00 / $600.00 | Mar 19, 2025 | Premium reasoning |
-| **o3** | $20.00 / $80.00 | Apr 16, 2025 | Advanced reasoning |
-| **o1** | $15.00 / $60.00 | Dec 17, 2024 | Strong reasoning |
-| **o4 Mini** | $1.50 / $6.00 | Apr 16, 2025 | Compact reasoning |
-| **o3 Mini** | $1.10 / $4.40 | Jan 31, 2025 | Efficient reasoning |
+#### o1 Pro
+Premium reasoning model with maximum performance for complex tasks
 
-### GPT-4o Series
+- **Context:** Not specified
+- **Pricing:** $150.00 input / $600.00 output (per 1M tokens)
+- **Released:** March 19, 2025
+- **Best for:** High-complexity reasoning, research
 
-| Model | Context | Pricing (Input/Output per 1M tokens) | Released |
-|-------|---------|---------------------------------------|----------|
-| **GPT-4o** | 128K | $2.50 / $10.00 | Nov 20, 2024 |
-| **GPT-4o Mini** | 128K | $0.15 / $0.60 | Jul 18, 2024 |
+![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green)
+
+#### o4-mini
+Smaller reasoning model optimized for efficiency and cost-effectiveness
+
+- **Context:** Not specified
+- **Pricing:** $1.50 input / $6.00 output (per 1M tokens)
+- **Released:** April 16, 2025
+- **Best for:** Cost-effective reasoning tasks
+
+![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green)
+
+#### o3
+Advanced reasoning model for complex problem-solving and analysis
+
+- **Context:** Not specified
+- **Pricing:** $20.00 input / $80.00 output (per 1M tokens)
+- **Released:** April 16, 2025
+- **Best for:** Complex reasoning, mathematical problems
+
+![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green)
+
+### GPT-4 Series
 
 #### GPT-4o
-Multimodal model with vision, audio, and text capabilities.
+Flagship multimodal model with vision, audio, and text capabilities
 
-![Vision](https://img.shields.io/badge/Vision-blue) ![Audio](https://img.shields.io/badge/Audio-yellow) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Streaming](https://img.shields.io/badge/Streaming-orange) ![Code](https://img.shields.io/badge/Code-red)
+- **Context:** 128,000 tokens
+- **Pricing:** $2.50 input / $10.00 output (per 1M tokens)
+- **Released:** May 13, 2024
+- **Best for:** Multimodal tasks, vision, general chat
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Audio](https://img.shields.io/badge/Audio-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
+
+#### GPT-4o Mini
+Cost-effective multimodal model with strong performance-to-price ratio
+
+- **Context:** 128,000 tokens
+- **Pricing:** $0.15 input / $0.60 output (per 1M tokens)
+- **Released:** July 18, 2024
+- **Best for:** High-volume tasks, cost-sensitive applications
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
 
 ---
 
 ## Anthropic
 
-**Website:** [anthropic.com](https://anthropic.com)
+*Website: [anthropic.com](https://anthropic.com)*
 
-### Claude 4.5 Series
-
-| Model | Context | Pricing (Input/Output per 1M tokens) | Released | Status |
-|-------|---------|---------------------------------------|----------|--------|
-| **Claude Opus 4.5** | 200K | $15.00 / $75.00 | Nov 24, 2025 | ✅ Active |
-| **Claude Sonnet 4.5** | 200K | $3.00 / $15.00 | Sep 29, 2025 | ✅ Active |
-| **Claude Haiku 4.5** | 200K | $1.00 / $5.00 | Oct 15, 2025 | ✅ Active |
+### Claude 4 Series
 
 #### Claude Opus 4.5
-Most powerful Claude model for complex reasoning and analysis.
+Most powerful Claude model with exceptional reasoning and analysis capabilities
 
-![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Reasoning](https://img.shields.io/badge/Reasoning-purple) ![Code](https://img.shields.io/badge/Code-red) ![Long Context](https://img.shields.io/badge/Long%20Context-indigo)
+- **Context:** 200,000 tokens
+- **Pricing:** $15.00 input / $75.00 output (per 1M tokens)
+- **Released:** November 24, 2025
+- **Best for:** Complex analysis, research, creative writing
 
-**Best for:** Complex research, detailed analysis, creative writing
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
 
 #### Claude Sonnet 4.5
-Balanced Claude model offering strong performance at moderate cost.
+Balanced model offering strong performance across diverse tasks
 
-![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Reasoning](https://img.shields.io/badge/Reasoning-purple) ![Code](https://img.shields.io/badge/Code-red) ![Long Context](https://img.shields.io/badge/Long%20Context-indigo)
+- **Context:** 200,000 tokens
+- **Pricing:** $3.00 input / $15.00 output (per 1M tokens)
+- **Released:** September 29, 2025
+- **Best for:** General purpose, balanced performance
 
-**Best for:** General purpose, balanced performance and cost
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
 
-### Claude 4 & 3.5 Series
+#### Claude Haiku 4.5
+Fast and efficient model optimized for speed and cost-effectiveness
 
-| Model | Context | Pricing (Input/Output per 1M tokens) | Released |
-|-------|---------|---------------------------------------|----------|
-| **Claude Opus 4** | 200K | $15.00 / $75.00 | May 22, 2025 |
-| **Claude Sonnet 4** | 200K | $3.00 / $15.00 | May 22, 2025 |
-| **Claude Haiku 3.5** | 200K | $0.80 / $4.00 | Oct 22, 2024 |
-| **Claude Haiku 3** | 200K | $0.25 / $1.25 | Mar 7, 2024 |
+- **Context:** 200,000 tokens
+- **Pricing:** $1.00 input / $5.00 output (per 1M tokens)
+- **Released:** October 15, 2025
+- **Best for:** Fast responses, high-volume tasks
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
+
+### Claude 3 Series
+
+#### Claude Haiku 3.5
+Fast Claude 3.5 model optimized for quick responses and efficiency
+
+- **Context:** 200,000 tokens
+- **Pricing:** $0.80 input / $4.00 output (per 1M tokens)
+- **Released:** October 22, 2024
+- **Best for:** Fast responses, cost-effective tasks
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green)
+
+#### Claude Haiku 3
+Lightest Claude 3 model for simple tasks and high-volume applications
+
+- **Context:** 200,000 tokens
+- **Pricing:** $0.25 input / $1.25 output (per 1M tokens)
+- **Released:** March 7, 2024
+- **Best for:** Simple tasks, high-volume applications
+
+![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green)
 
 ---
 
 ## Google
 
-**Website:** [ai.google](https://ai.google)
+*Website: [ai.google.dev](https://ai.google.dev)*
+
+### Gemini 3 Series ![Preview](https://img.shields.io/badge/Preview-orange)
+
+#### Gemini 3 Pro Preview
+Preview of next-generation Gemini with advanced reasoning and thinking capabilities
+
+- **Context:** 1,048,576 tokens
+- **Pricing:** $2.00 input / $10.00 output (per 1M tokens)
+- **Released:** November 1, 2025
+- **Best for:** Advanced reasoning, complex problem-solving
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green) ![Thinking](https://img.shields.io/badge/Thinking-✓-blue)
+
+#### Gemini 3 Flash Preview
+Fast preview version of Gemini 3 with thinking capabilities
+
+- **Context:** 1,048,576 tokens
+- **Pricing:** $0.50 input / $3.00 output (per 1M tokens)
+- **Released:** December 1, 2025
+- **Best for:** Fast reasoning, general purpose
+
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green) ![Thinking](https://img.shields.io/badge/Thinking-✓-blue)
 
 ### Gemini 2.5 Series
 
-| Model | Context | Pricing (Input/Output per 1M tokens) | Released | Special Features |
-|-------|---------|---------------------------------------|----------|------------------|
-| **Gemini 2.5 Pro** | 1M+ | $1.25 / $10.00 | Jun 17, 2025 | Thinking capabilities |
-| **Gemini 2.5 Flash** | 1M+ | $0.15 / $0.60 | Jun 1, 2025 | Thinking capabilities |
-
 #### Gemini 2.5 Pro
-Google's flagship model with advanced reasoning and thinking capabilities.
+Advanced Gemini model with exceptional reasoning and multimodal capabilities
 
-![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Reasoning](https://img.shields.io/badge/Reasoning-purple) ![Code](https://img.shields.io/badge/Code-red) ![Long Context](https://img.shields.io/badge/Long%20Context-indigo) ![Thinking](https://img.shields.io/badge/Thinking-magenta)
+- **Context:** 1,048,576 tokens
+- **Pricing:** $1.25 input / $10.00 output (per 1M tokens)
+- **Released:** June 17, 2025
+- **Best for:** Complex analysis, long context tasks
 
-**Best for:** Complex reasoning, research, detailed analysis
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/badge/Reasoning-✓-green) ![Code](https://img.shields.io/badge/Code-✓-green) ![Thinking](https://img.shields.io/badge/Thinking-✓-blue)
 
-### Gemini 2.0 Series
+#### Gemini 2.5 Flash
+Fast and efficient Gemini model with strong performance-to-cost ratio
 
-| Model | Context | Pricing (Input/Output per 1M tokens) | Status | Features |
-|-------|---------|---------------------------------------|--------|----------|
-| **Gemini 2.0 Flash** | 1M+ | $0.10 / $0.40 | ✅ Active | Audio support |
-| **Gemini 2.0 Flash-Lite** | 1M+ | Free | ✅ Active | Lightweight |
-| **Gemini 2.0 Flash Exp** | 1M+ | Free | 🧪 Preview | Bidirectional audio |
+- **Context:** 1,048,576 tokens
+- **Pricing:** $0.15 input / $0.60 output (per 1M tokens)
+- **Released:** June 1, 2025
+- **Best for:** General purpose, cost-effective applications
 
-#### Gemini 2.0 Flash
-Latest fast and versatile multimodal model for diverse tasks.
-
-![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Code](https://img.shields.io/badge/Code-red) ![Long Context](https://img.shields.io/badge/Long%20Context-indigo) ![Audio](https://img.shields.io/badge/Audio-yellow)
-
-**Best for:** High-volume applications, cost-effective multimodal tasks
-
-### Experimental Models
-
-#### Gemini Experimental 1206
-Experimental Gemini 2.5 Pro with thinking capabilities.
-
-![Vision](https://img.shields.io/badge/Vision-blue) ![Function Calling](https://img.shields.io/badge/Function%20Calling-green) ![Reasoning](https://img.shields.io/badge/Reasoning-purple) ![Code](https://img.shields.io/badge/Code-red) ![Long Context](https://img.shields.io/badge/Long%20Context-indigo) ![Thinking](https://img.shields.io/badge/Thinking-magenta)
-
-**Status:** 🧪 Preview | **Best for:** Advanced reasoning experiments, research applications
-
----
-
-## Quick Reference
-
-### By Use Case
-- **Production Apps:** GPT-5.2, Claude Sonnet 4.5, Gemini 2.0 Flash
-- **Research & Analysis:** GPT-5.2 Pro, Claude Opus 4.5, Gemini 2.5 Pro
-- **Code Development:** GPT-5.1 Codex Max, Claude models with code capability
-- **Cost-Sensitive:** Gemini 2.0 Flash, GPT-4o Mini, Claude Haiku 3
-- **Long Documents:** All Gemini models (1M+ context), Claude models (200K context)
-
-### Legend
-- ✅ **Active:** Production ready
-- 🧪 **Preview:** Experimental, subject to change
-- **Context:** Maximum input length in tokens (K = thousand, M = million)
-- **Pricing:** Per 1 million tokens (input/output)
+![Vision](https://img.shields.io/badge/Vision-✓-green) ![Function Calling](https://img.shields.io/badge/Function%20Calling-✓-green) ![Streaming](https://img.shields.io/badge/Streaming-✓-green) ![Reasoning](https://img.shields.io/

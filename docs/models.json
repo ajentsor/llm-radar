@@ -1,6 +1,6 @@
 {
-  "updated_at": "2025-12-27T13:13:32.000Z",
-  "summary": "OpenAI has released GPT-5.2 and GPT-5.2 Pro models with new TTS and transcription variants. Google continues with Gemini 2.x series including Flash-Lite variants, while Anthropic maintains Claude 4.x lineup.",
+  "updated_at": "2025-12-27T13:17:34Z",
+  "summary": "Major updates include new GPT-5.2 models with Pro variant, GPT-5.1 Codex specializations, and Google's Gemini 3 preview models. OpenAI continues expanding GPT-5 family while Google advances to Gemini 3 generation.",
   "providers": {
     "openai": {
       "name": "OpenAI",
@@ -10,7 +10,7 @@
           "id": "gpt-5.2-pro",
           "name": "GPT-5.2 Pro",
           "provider": "openai",
-          "description": "Most powerful OpenAI model for complex reasoning and professional tasks",
+          "description": "Enhanced version of GPT-5.2 optimized for complex reasoning and professional tasks",
           "context_window": null,
           "pricing": {
             "input": 3.5,
@@ -21,18 +21,17 @@
             "function_calling",
             "streaming",
             "reasoning",
-            "code",
-            "web_search"
+            "code"
           ],
           "status": "active",
           "released": "2025-12-11",
-          "recommended_for": "Complex analysis, professional writing, advanced reasoning"
+          "recommended_for": "Professional workflows, complex analysis"
         },
         {
           "id": "gpt-5.2",
           "name": "GPT-5.2",
           "provider": "openai",
-          "description": "Latest flagship GPT model with enhanced capabilities",
+          "description": "Latest flagship model with advanced reasoning and multimodal capabilities",
           "context_window": null,
           "pricing": {
             "input": 1.75,
@@ -43,18 +42,51 @@
             "function_calling",
             "streaming",
             "reasoning",
-            "code",
-            "web_search"
+            "code"
           ],
           "status": "active",
           "released": "2025-12-11",
-          "recommended_for": "General chat, content creation, code generation"
+          "recommended_for": "General chat, advanced reasoning tasks"
+        },
+        {
+          "id": "gpt-5.1-codex-max",
+          "name": "GPT-5.1 Codex Max",
+          "provider": "openai",
+          "description": "Maximum capability version of GPT-5.1 specialized for complex coding tasks",
+          "context_window": null,
+          "pricing": null,
+          "capabilities": [
+            "code",
+            "function_calling",
+            "streaming",
+            "reasoning"
+          ],
+          "status": "active",
+          "released": "2025-01-20",
+          "recommended_for": "Complex software development, architecture"
+        },
+        {
+          "id": "gpt-5.1-codex",
+          "name": "GPT-5.1 Codex",
+          "provider": "openai",
+          "description": "Code-specialized version of GPT-5.1 for programming and development tasks",
+          "context_window": null,
+          "pricing": null,
+          "capabilities": [
+            "code",
+            "function_calling",
+            "streaming",
+            "reasoning"
+          ],
+          "status": "active",
+          "released": "2025-01-17",
+          "recommended_for": "Code generation, debugging, programming"
         },
         {
           "id": "gpt-5.1",
           "name": "GPT-5.1",
           "provider": "openai",
-          "description": "Previous generation flagship with strong performance",
+          "description": "Advanced GPT-5 series model with improved reasoning and efficiency",
           "context_window": null,
           "pricing": {
             "input": 1.25,
@@ -68,30 +100,14 @@
             "code"
           ],
           "status": "active",
-          "released": "2025-11-13",
-          "recommended_for": "General purpose tasks, balanced cost and performance"
-        },
-        {
-          "id": "gpt-5.1-codex-max",
-          "name": "GPT-5.1 Codex Max",
-          "provider": "openai",
-          "description": "Specialized for advanced code generation and software development",
-          "context_window": null,
-          "pricing": null,
-          "capabilities": [
-            "code",
-            "function_calling",
-            "streaming"
-          ],
-          "status": "active",
-          "released": "2025-01-20",
-          "recommended_for": "Complex software development, code review, debugging"
+          "released": "2025-01-10",
+          "recommended_for": "General purpose, reasoning tasks"
         },
         {
           "id": "gpt-5",
           "name": "GPT-5",
           "provider": "openai",
-          "description": "First GPT-5 series model with significant capability improvements",
+          "description": "First model in the GPT-5 series with breakthrough reasoning capabilities",
           "context_window": null,
           "pricing": {
             "input": 1.0,
@@ -106,32 +122,13 @@
           ],
           "status": "active",
           "released": "2025-08-07",
-          "recommended_for": "General purpose, cost-effective for high-volume usage"
-        },
-        {
-          "id": "o3",
-          "name": "o3",
-          "provider": "openai",
-          "description": "Advanced reasoning model for complex problem solving",
-          "context_window": null,
-          "pricing": {
-            "input": 20.0,
-            "output": 80.0
-          },
-          "capabilities": [
-            "reasoning",
-            "code",
-            "function_calling"
-          ],
-          "status": "active",
-          "released": "2025-04-16",
-          "recommended_for": "Scientific research, mathematical problems, complex analysis"
+          "recommended_for": "Advanced reasoning, general purpose"
         },
         {
           "id": "o4-mini",
-          "name": "o4 Mini",
+          "name": "o4-mini",
           "provider": "openai",
-          "description": "Compact reasoning model balancing cost and capability",
+          "description": "Smaller reasoning model optimized for efficiency and cost-effectiveness",
           "context_window": null,
           "pricing": {
             "input": 1.5,
@@ -139,18 +136,37 @@
           },
           "capabilities": [
             "reasoning",
-            "code",
-            "function_calling"
+            "function_calling",
+            "streaming"
           ],
           "status": "active",
           "released": "2025-04-16",
-          "recommended_for": "Moderate complexity reasoning tasks, cost-sensitive applications"
+          "recommended_for": "Cost-effective reasoning tasks"
+        },
+        {
+          "id": "o3",
+          "name": "o3",
+          "provider": "openai",
+          "description": "Advanced reasoning model for complex problem-solving and analysis",
+          "context_window": null,
+          "pricing": {
+            "input": 20.0,
+            "output": 80.0
+          },
+          "capabilities": [
+            "reasoning",
+            "function_calling",
+            "streaming"
+          ],
+          "status": "active",
+          "released": "2025-04-16",
+          "recommended_for": "Complex reasoning, mathematical problems"
         },
         {
           "id": "o3-mini",
-          "name": "o3 Mini",
+          "name": "o3-mini",
           "provider": "openai",
-          "description": "Efficient reasoning model for everyday problem solving",
+          "description": "Efficient reasoning model balancing performance and cost",
           "context_window": null,
           "pricing": {
             "input": 1.1,
@@ -158,18 +174,18 @@
           },
           "capabilities": [
             "reasoning",
-            "code",
-            "function_calling"
+            "function_calling",
+            "streaming"
           ],
           "status": "active",
           "released": "2025-01-31",
-          "recommended_for": "Daily reasoning tasks, logical problem solving"
+          "recommended_for": "Everyday reasoning, problem-solving"
         },
         {
           "id": "o1-pro",
           "name": "o1 Pro",
           "provider": "openai",
-          "description": "Premium reasoning model for the most challenging problems",
+          "description": "Premium reasoning model with maximum performance for complex tasks",
           "context_window": null,
           "pricing": {
             "input": 150.0,
@@ -177,18 +193,18 @@
           },
           "capabilities": [
             "reasoning",
-            "code",
-            "function_calling"
+            "function_calling",
+            "streaming"
           ],
           "status": "active",
           "released": "2025-03-19",
-          "recommended_for": "Research, complex mathematical proofs, advanced scientific analysis"
+          "recommended_for": "High-complexity reasoning, research"
         },
         {
           "id": "o1",
           "name": "o1",
           "provider": "openai",
-          "description": "Strong reasoning model for complex analytical tasks",
+          "description": "Reasoning-focused model designed for complex problem-solving",
           "context_window": null,
           "pricing": {
             "input": 15.0,
@@ -196,18 +212,18 @@
           },
           "capabilities": [
             "reasoning",
-            "code",
-            "function_calling"
+            "function_calling",
+            "streaming"
           ],
           "status": "active",
           "released": "2024-12-17",
-          "recommended_for": "Complex reasoning, research tasks, detailed analysis"
+          "recommended_for": "Reasoning, analysis, complex problems"
         },
         {
           "id": "gpt-4o",
           "name": "GPT-4o",
           "provider": "openai",
-          "description": "Multimodal model with vision, audio, and text capabilities",
+          "description": "Flagship multimodal model with vision, audio, and text capabilities",
           "context_window": 128000,
           "pricing": {
             "input": 2.5,
@@ -221,14 +237,14 @@
             "code"
           ],
           "status": "active",
-          "released": "2024-11-20",
-          "recommended_for": "Multimodal applications, image analysis, audio processing"
+          "released": "2024-05-13",
+          "recommended_for": "Multimodal tasks, vision, general chat"
         },
         {
           "id": "gpt-4o-mini",
           "name": "GPT-4o Mini",
           "provider": "openai",
-          "description": "Fast and affordable multimodal model for everyday tasks",
+          "description": "Cost-effective multimodal model with strong performance-to-price ratio",
           "context_window": 128000,
           "pricing": {
             "input": 0.15,
@@ -242,7 +258,65 @@
           ],
           "status": "active",
           "released": "2024-07-18",
-          "recommended_for": "High-volume applications, cost-sensitive multimodal tasks"
+          "recommended_for": "High-volume tasks, cost-sensitive applications"
+        },
+        {
+          "id": "gpt-4-turbo",
+          "name": "GPT-4 Turbo",
+          "provider": "openai",
+          "description": "Enhanced GPT-4 with improved speed and updated training data",
+          "context_window": 128000,
+          "pricing": {
+            "input": 10.0,
+            "output": 30.0
+          },
+          "capabilities": [
+            "vision",
+            "function_calling",
+            "streaming",
+            "code"
+          ],
+          "status": "active",
+          "released": "2024-04-09",
+          "recommended_for": "Large context tasks, complex analysis"
+        },
+        {
+          "id": "gpt-4",
+          "name": "GPT-4",
+          "provider": "openai",
+          "description": "Original GPT-4 model with strong reasoning and text generation",
+          "context_window": 8192,
+          "pricing": {
+            "input": 30.0,
+            "output": 60.0
+          },
+          "capabilities": [
+            "function_calling",
+            "streaming",
+            "code",
+            "reasoning"
+          ],
+          "status": "active",
+          "released": "2023-06-27",
+          "recommended_for": "Legacy applications, proven reliability"
+        },
+        {
+          "id": "gpt-3.5-turbo",
+          "name": "GPT-3.5 Turbo",
+          "provider": "openai",
+          "description": "Fast and cost-effective model for basic chat and text tasks",
+          "context_window": 16385,
+          "pricing": {
+            "input": 0.5,
+            "output": 1.5
+          },
+          "capabilities": [
+            "function_calling",
+            "streaming"
+          ],
+          "status": "active",
+          "released": "2023-03-01",
+          "recommended_for": "Basic chat, simple tasks, high-volume applications"
         }
       ]
     },
@@ -254,7 +328,7 @@
           "id": "claude-opus-4-5-20251101",
           "name": "Claude Opus 4.5",
           "provider": "anthropic",
-          "description": "Most powerful Claude model for complex reasoning and analysis",
+          "description": "Most powerful Claude model with exceptional reasoning and analysis capabilities",
           "context_window": 200000,
           "pricing": {
             "input": 15.0,
@@ -263,19 +337,19 @@
           "capabilities": [
             "vision",
             "function_calling",
+            "streaming",
             "reasoning",
-            "code",
-            "long_context"
+            "code"
           ],
           "status": "active",
           "released": "2025-11-24",
-          "recommended_for": "Complex research, detailed analysis, creative writing"
+          "recommended_for": "Complex analysis, research, creative writing"
         },
         {
           "id": "claude-sonnet-4-5-20250929",
           "name": "Claude Sonnet 4.5",
           "provider": "anthropic",
-          "description": "Balanced Claude model offering strong performance at moderate cost",
+          "description": "Balanced model offering strong performance across diverse tasks",
           "context_window": 200000,
           "pricing": {
             "input": 3.0,
@@ -284,19 +358,19 @@
           "capabilities": [
             "vision",
             "function_calling",
+            "streaming",
             "reasoning",
-            "code",
-            "long_context"
+            "code"
           ],
           "status": "active",
           "released": "2025-09-29",
-          "recommended_for": "General purpose, balanced performance and cost"
+          "recommended_for": "General purpose, balanced performance"
         },
         {
           "id": "claude-haiku-4-5-20251001",
           "name": "Claude Haiku 4.5",
           "provider": "anthropic",
-          "description": "Fast and efficient Claude model for quick tasks",
+          "description": "Fast and efficient model optimized for speed and cost-effectiveness",
           "context_window": 200000,
           "pricing": {
             "input": 1.0,
@@ -305,18 +379,36 @@
           "capabilities": [
             "vision",
             "function_calling",
-            "code",
-            "long_context"
+            "streaming",
+            "code"
           ],
           "status": "active",
           "released": "2025-10-15",
-          "recommended_for": "Quick tasks, high-volume processing, cost-effective applications"
+          "recommended_for": "Fast responses, high-volume tasks"
+        },
+        {
+          "id": "claude-opus-4-1-20250805",
+          "name": "Claude Opus 4.1",
+          "provider": "anthropic",
+          "description": "Previous generation flagship model with strong reasoning capabilities",
+          "context_window": 200000,
+          "pricing": null,
+          "capabilities": [
+            "vision",
+            "function_calling",
+            "streaming",
+            "reasoning",
+            "code"
+          ],
+          "status": "active",
+          "released": "2025-08-05",
+          "recommended_for": "Complex reasoning, analysis tasks"
         },
         {
           "id": "claude-opus-4-20250514",
           "name": "Claude Opus 4",
           "provider": "anthropic",
-          "description": "Previous generation flagship Claude model with excellent capabilities",
+          "description": "First Claude 4 generation model with advanced capabilities",
           "context_window": 200000,
           "pricing": {
             "input": 15.0,
@@ -325,19 +417,19 @@
           "capabilities": [
             "vision",
             "function_calling",
+            "streaming",
             "reasoning",
-            "code",
-            "long_context"
+            "code"
           ],
           "status": "active",
           "released": "2025-05-22",
-          "recommended_for": "Complex analysis, research tasks"
+          "recommended_for": "Complex analysis, creative tasks"
         },
         {
           "id": "claude-sonnet-4-20250514",
           "name": "Claude Sonnet 4",
           "provider": "anthropic",
-          "description": "Balanced Claude 4 model for general purpose use",
+          "description": "Balanced Claude 4 model for general-purpose applications",
           "context_window": 200000,
           "pricing": {
             "input": 3.0,
@@ -346,19 +438,19 @@
           "capabilities": [
             "vision",
             "function_calling",
+            "streaming",
             "reasoning",
-            "code",
-            "long_context"
+            "code"
           ],
           "status": "active",
           "released": "2025-05-22",
-          "recommended_for": "General purpose applications, content creation"
+          "recommended_for": "General purpose, versatile tasks"
         },
         {
           "id": "claude-3-5-haiku-20241022",
           "name": "Claude Haiku 3.5",
           "provider": "anthropic",
-          "description": "Fast Claude 3.5 model for quick responses",
+          "description": "Fast Claude 3.5 model optimized for quick responses and efficiency",
           "context_window": 200000,
           "pricing": {
             "input": 0.8,
@@ -367,17 +459,18 @@
           "capabilities": [
             "vision",
             "function_calling",
+            "streaming",
             "code"
           ],
           "status": "active",
           "released": "2024-10-22",
-          "recommended_for": "Quick tasks, chat applications, cost-effective processing"
+          "recommended_for": "Fast responses, cost-effective tasks"
         },
         {
           "id": "claude-3-haiku-20240307",
           "name": "Claude Haiku 3",
           "provider": "anthropic",
-          "description": "Original fast Claude model for simple tasks",
+          "description": "Lightest Claude 3 model for simple tasks and high-volume applications",
           "context_window": 200000,
           "pricing": {
             "input": 0.25,
@@ -385,23 +478,67 @@
           },
           "capabilities": [
             "function_calling",
-            "code"
+            "streaming"
           ],
           "status": "active",
           "released": "2024-03-07",
-          "recommended_for": "Simple tasks, high-volume processing, legacy applications"
+          "recommended_for": "Simple tasks, high-volume applications"
         }
       ]
     },
     "google": {
       "name": "Google",
-      "website": "https://ai.google",
+      "website": "https://ai.google.dev",
       "models": [
+        {
+          "id": "gemini-3-pro-preview",
+          "name": "Gemini 3 Pro Preview",
+          "provider": "google",
+          "description": "Preview of next-generation Gemini with advanced reasoning and thinking capabilities",
+          "context_window": 1048576,
+          "pricing": {
+            "input": 2.0,
+            "output": 10.0
+          },
+          "capabilities": [
+            "vision",
+            "function_calling",
+            "streaming",
+            "reasoning",
+            "code",
+            "thinking"
+          ],
+          "status": "preview",
+          "released": "2025-11-01",
+          "recommended_for": "Advanced reasoning, complex problem-solving"
+        },
+        {
+          "id": "gemini-3-flash-preview",
+          "name": "Gemini 3 Flash Preview",
+          "provider": "google",
+          "description": "Fast preview version of Gemini 3 with thinking capabilities",
+          "context_window": 1048576,
+          "pricing": {
+            "input": 0.5,
+            "output": 3.0
+          },
+          "capabilities": [
+            "vision",
+            "function_calling",
+            "streaming",
+            "reasoning",
+            "code",
+            "thinking"
+          ],
+          "status": "preview",
+          "released": "2025-12-01",
+          "recommended_for": "Fast reasoning, general purpose"
+        },
         {
           "id": "gemini-2.5-pro",
           "name": "Gemini 2.5 Pro",
           "provider": "google",
-          "description": "Google's flagship model with advanced reasoning and thinking capabilities",
+          "description": "Advanced Gemini model with exceptional reasoning and multimodal capabilities",
           "context_window": 1048576,
           "pricing": {
             "input": 1.25,
@@ -410,20 +547,20 @@
           "capabilities": [
             "vision",
             "function_calling",
+            "streaming",
             "reasoning",
             "code",
-            "long_context",
             "thinking"
           ],
           "status": "active",
           "released": "2025-06-17",
-          "recommended_for": "Complex reasoning, research, detailed analysis"
+          "recommended_for": "Complex analysis, long context tasks"
         },
         {
           "id": "gemini-2.5-flash",
           "name": "Gemini 2.5 Flash",
           "provider": "google",
-          "description": "Fast multimodal model with thinking capabilities and large context",
+          "description": "Fast and efficient Gemini model with strong performance-to-cost ratio",
           "context_window": 1048576,
           "pricing": {
             "input": 0.15,
@@ -432,20 +569,38 @@
           "capabilities": [
             "vision",
             "function_calling",
+            "streaming",
             "reasoning",
             "code",
-            "long_context",
             "thinking"
           ],
           "status": "active",
           "released": "2025-06-01",
-          "recommended_for": "General purpose, cost-effective with thinking capabilities"
+          "recommended_for": "General purpose, cost-effective applications"
+        },
+        {
+          "id": "gemini-2.5-flash-lite",
+          "name": "Gemini 2.5 Flash-Lite",
+          "provider": "google",
+          "description": "Lightweight version of Gemini 2.5 Flash for high-volume applications",
+          "context_window": 1048576,
+          "pricing": null,
+          "capabilities": [
+            "vision",
+            "function_calling",
+            "streaming",
+            "code",
+            "thinking"
+          ],
+          "status": "active",
+          "released": "2025-07-01",
+          "recommended_for": "High-volume, lightweight tasks"
         },
         {
           "id": "gemini-2.0-flash",
           "name": "Gemini 2.0 Flash",
           "provider": "google",
-          "description": "Latest fast and versatile multimodal model for diverse tasks",
+          "description": "Fast multimodal model for diverse tasks with native audio support",
           "context_window": 1048576,
           "pricing": {
             "input": 0.1,
@@ -453,14 +608,14 @@
           },
           "capabilities": [
             "vision",
+            "audio",
             "function_calling",
-            "code",
-            "long_context",
-            "audio"
+            "streaming",
+            "code"
           ],
           "status": "active",
           "released": "2025-01-01",
-          "recommended_for": "High-volume applications, cost-effective multimodal tasks"
+          "recommended_for": "Multimodal tasks, audio processing"
         },
         {
           "id": "gemini-2.0-flash-lite",
@@ -472,58 +627,38 @@
           "capabilities": [
             "vision",
             "function_calling",
-            "code",
-            "long_context"
+            "streaming",
+            "code"
           ],
           "status": "active",
           "released": "2025-01-01",
-          "recommended_for": "Lightweight applications, mobile deployment"
+          "recommended_for": "Efficient processing, cost-sensitive tasks"
         },
         {
           "id": "gemini-2.0-flash-exp",
           "name": "Gemini 2.0 Flash Experimental",
           "provider": "google",
-          "description": "Experimental version with latest features and improvements",
+          "description": "Experimental version of Gemini 2.0 Flash with latest features",
           "context_window": 1048576,
           "pricing": null,
           "capabilities": [
             "vision",
-            "function_calling",
-            "code",
-            "long_context",
             "audio",
-            "bidirectional"
-          ],
-          "status": "preview",
-          "released": null,
-          "recommended_for": "Testing new features, experimental applications"
-        },
-        {
-          "id": "gemini-exp-1206",
-          "name": "Gemini Experimental 1206",
-          "provider": "google",
-          "description": "Experimental Gemini 2.5 Pro with thinking capabilities",
-          "context_window": 1048576,
-          "pricing": null,
-          "capabilities": [
-            "vision",
             "function_calling",
-            "reasoning",
-            "code",
-            "long_context",
-            "thinking"
+            "streaming",
+            "code"
           ],
           "status": "preview",
-          "released": "2025-03-25",
-          "recommended_for": "Advanced reasoning experiments, research applications"
+          "released": "2025-01-01",
+          "recommended_for": "Experimental features, early access"
         }
       ]
     }
   },
   "highlights": {
-    "cheapest_capable": "gemini-2.0-flash - Excellent multimodal capabilities at just $0.1/$0.4 per 1M tokens",
-    "most_powerful": "gpt-5.2-pro - OpenAI's flagship with advanced reasoning and professional capabilities",
-    "best_for_code": "gpt-5.1-codex-max - Specialized for advanced software development and debugging",
-    "largest_context": "gemini-2.5-pro - 1M+ token context window with thinking capabilities"
+    "cheapest_capable": "google/gemini-2.0-flash - $0.1/M input, strong multimodal capabilities",
+    "most_powerful": "openai/gpt-5.2-pro - Latest flagship with advanced reasoning and professional optimization",
+    "best_for_code": "openai/gpt-5.1-codex-max - Specialized maximum-capability coding model",
+    "largest_context": "google/gemini-2.5-pro - 1M tokens with advanced reasoning"
   }
 }
