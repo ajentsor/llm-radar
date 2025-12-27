@@ -1,10 +1,13 @@
 ---
 name: llm-radar
 description: Get up-to-date AI model information. Use when users ask about LLM models, pricing, capabilities, which model to use, or compare models across OpenAI, Anthropic, and Google Gemini. Data updated daily.
-allowed-tools: Read, Glob, Grep, Bash
+allowed-tools: Read, Glob, Grep
 ---
 
 # LLM Radar - AI Model Intelligence
+
+> **Preferred: Use the MCP server instead!**
+> This skill file is kept for backward compatibility. For the best experience, connect to the LLM Radar MCP server. See [README.md](README.md) for setup.
 
 You have access to **daily-updated** information about AI models from OpenAI, Anthropic, and Google Gemini.
 
@@ -57,14 +60,6 @@ Read `data/models.json`, filter for vision capability, sort by price:
 ### "What's new in AI models?"
 
 Read the `summary` field from `data/models.json` and highlight recent releases.
-
-## Query Script (Optional)
-
-For complex queries, use the helper script:
-
-```bash
-python3 scripts/query.py "cheapest model with vision"
-```
 
 ## Important Notes
 

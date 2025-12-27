@@ -2,85 +2,121 @@
 
 # LLM Radar
 
-### Real-time AI Model Intelligence for Developers
+### Real-time AI Model Intelligence via MCP
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
+[![MCP Server](https://img.shields.io/badge/MCP-Server-orange.svg)](https://modelcontextprotocol.io)
 [![Updated Daily](https://img.shields.io/badge/data-updated%20daily-brightgreen.svg)](data/)
-[![Claude Code Skill](https://img.shields.io/badge/claude%20code-skill-purple.svg)](SKILL.md)
 
 **Stop guessing which AI model to use. Get the data.**
 
-[Live Dashboard](https://ajentsor.github.io/llm-radar) &bull; [Model Reference](data/MODELS.md) &bull; [Install Skill](#install-as-claude-code-skill) &bull; [Contributing](#contributing)
+[Live Dashboard](https://ajentsor.github.io/llm-radar) · [Model Reference](data/MODELS.md) · [MCP Setup](#mcp-server-setup) · [Contributing](CONTRIBUTING.md)
 
 </div>
 
 ---
 
-## The Problem
+## What is LLM Radar?
 
-Every time you ask an AI assistant about models, you get **outdated information**. Training data cutoffs mean AI assistants recommend old models, wrong pricing, or deprecated APIs.
+LLM Radar is an **MCP (Model Context Protocol) server** that provides real-time information about AI models from OpenAI, Anthropic, and Google.
 
-## The Solution
+AI assistants have training data cutoffs, so they often recommend outdated models, wrong pricing, or deprecated APIs. LLM Radar solves this by:
 
-**LLM Radar** fetches fresh data from OpenAI, Anthropic, and Google APIs **every day**, uses Claude to intelligently enrich it, and makes it available as:
-
-- A **Claude Code skill** you can query naturally
-- A **JSON API** for your applications
-- A **beautiful dashboard** for quick reference
+- Fetching fresh data from provider APIs **daily**
+- Enriching it with Claude for better descriptions
+- Exposing it via MCP for any compatible client
 
 ---
 
-## Quick Start
+## MCP Server Setup
 
-### Install as Claude Code Skill
+### Option 1: Remote Server (Recommended)
 
-Clone into your Claude skills directory:
+Connect directly to the hosted MCP server - no installation needed:
+
+**Claude Desktop config** (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "llm-radar": {
+      "url": "https://ajents.company/llm-radar/mcp"
+    }
+  }
+}
+```
+
+### Option 2: Local via npx/pip
 
 ```bash
-git clone https://github.com/ajentsor/llm-radar.git ~/.claude/skills/llm-radar
+# Install
+pip install llm-radar-mcp
+
+# Or run directly
+pip install llm-radar-mcp && llm-radar-mcp
 ```
 
-Then just ask Claude naturally:
+**Claude Desktop config** (local stdio):
 
+```json
+{
+  "mcpServers": {
+    "llm-radar": {
+      "command": "llm-radar-mcp"
+    }
+  }
+}
 ```
-> Which model is cheapest for vision tasks?
 
-Based on the latest LLM Radar data (updated today):
-
-1. **Gemini 2.0 Flash** - $0.10/$0.40 per 1M tokens
-2. **GPT-4o Mini** - $0.15/$0.60 per 1M tokens
-3. **Claude 3.5 Haiku** - $0.80/$4.00 per 1M tokens
-```
-
-### Use the Data Directly
+### Option 3: Docker
 
 ```bash
-# Get the JSON
-curl -O https://raw.githubusercontent.com/ajentsor/llm-radar/main/data/models.json
-
-# Use in Python
-import json
-with open('models.json') as f:
-    data = json.load(f)
-    for provider in data['providers'].values():
-        for model in provider['models']:
-            print(f"{model['name']}: ${model['pricing']['input']}/1M in")
+docker run -p 8000:8000 ghcr.io/ajentsor/llm-radar:latest
 ```
 
-### Run Locally
+Then connect to `http://localhost:8000/sse`
 
-```bash
-git clone https://github.com/ajentsor/llm-radar.git
-cd llm-radar
-pip install -r requirements.txt
+---
 
-# Fetch fresh data
-python src/fetch_models.py
+## Available MCP Tools
 
-# Enrich with Claude
-python src/aggregate_with_claude.py
+Once connected, you can use these tools:
+
+| Tool | Description |
+|------|-------------|
+| `query_models` | Search/filter models by provider, capability, price, context |
+| `compare_models` | Side-by-side comparison of specific models |
+| `get_model` | Get detailed info about a specific model |
+| `get_recommendations` | Get curated picks: cheapest, most powerful, best for code |
+| `get_pricing` | Get pricing sorted by cost |
+
+### Example Queries
+
 ```
+"What's the cheapest model with vision?"
+→ Uses query_models with capability="vision", sorted by price
+
+"Compare GPT-4o, Claude 3.5 Sonnet, and Gemini 1.5 Pro"
+→ Uses compare_models with those model IDs
+
+"Which model should I use for code generation?"
+→ Uses get_recommendations with use_case="best_for_code"
+```
+
+---
+
+## Available Resources
+
+The MCP server also exposes resources you can read directly:
+
+| Resource URI | Description |
+|--------------|-------------|
+| `llm-radar://models/all` | Complete JSON data |
+| `llm-radar://models/openai` | OpenAI models only |
+| `llm-radar://models/anthropic` | Anthropic models only |
+| `llm-radar://models/google` | Google models only |
+| `llm-radar://highlights` | Curated recommendations |
 
 ---
 
@@ -106,20 +142,16 @@ python src/aggregate_with_claude.py
 │       ┌─────────────┼─────────────┐                            │
 │       ▼             ▼             ▼                            │
 │  ┌─────────┐  ┌──────────┐  ┌───────────┐                      │
-│  │models.  │  │ MODELS.  │  │  GitHub   │   ← Commit & Deploy  │
-│  │  json   │  │   md     │  │  Pages    │                      │
+│  │models.  │  │ MCP      │  │  GitHub   │   ← Deploy           │
+│  │  json   │  │ Server   │  │  Pages    │                      │
 │  └─────────┘  └──────────┘  └───────────┘                      │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-1. **Fetch**: GitHub Action calls OpenAI, Anthropic, and Google APIs
-2. **Enrich**: Claude Sonnet processes raw data, adds descriptions, and generates human-readable docs
-3. **Deploy**: Updated data is committed and GitHub Pages refreshes
-
 ---
 
-## Data Available
+## Data Format
 
 Each model includes:
 
@@ -131,38 +163,66 @@ Each model includes:
 | `description` | What the model is best for |
 | `context_window` | Max input tokens |
 | `pricing` | Input/output cost per 1M tokens |
-| `capabilities` | vision, function_calling, streaming, etc. |
+| `capabilities` | vision, function_calling, reasoning, etc. |
 | `status` | active, preview, or deprecated |
 | `released` | Release date |
 | `recommended_for` | Use case suggestions |
 
 ---
 
+## Local Development
+
+```bash
+# Clone
+git clone https://github.com/ajentsor/llm-radar.git
+cd llm-radar
+
+# Install
+python3 -m venv venv
+source venv/bin/activate
+pip install -e ".[dev]"
+
+# Run MCP server (stdio mode)
+llm-radar-mcp
+
+# Run MCP server (HTTP mode for testing)
+llm-radar-mcp --http --port 8000
+
+# Fetch fresh data (requires API keys)
+cp .env.example .env
+# Edit .env with your API keys
+python3 -m llm_radar.fetch_models
+python3 -m llm_radar.aggregate_with_claude
+```
+
+---
+
 ## Project Structure
 
 ```
-llm-radar/                   # Clone directly to ~/.claude/skills/llm-radar
-├── SKILL.md                 # Claude Code skill definition
-├── scripts/
-│   └── query.py             # Query helper script
+llm-radar/
+├── src/llm_radar/              # Main package
+│   ├── __init__.py
+│   ├── mcp_server.py           # MCP server implementation
+│   ├── fetch_models.py         # API fetchers
+│   └── aggregate_with_claude.py # Claude enrichment
 ├── data/
-│   ├── models.json          # Structured model data
-│   ├── MODELS.md            # Human-readable reference
-│   └── raw/                 # Raw API responses
-├── src/
-│   ├── fetch_models.py      # API fetchers
-│   └── aggregate_with_claude.py  # Claude enrichment
-├── docs/                    # GitHub Pages site
-├── .github/workflows/
-│   └── update-models.yml    # Daily cron using Claude
-└── README.md
+│   ├── models.json             # Structured model data
+│   ├── MODELS.md               # Human-readable reference
+│   └── raw/                    # Raw API responses
+├── docs/                       # GitHub Pages site
+├── Dockerfile                  # Container build
+├── docker-compose.yml          # Local container setup
+├── pyproject.toml              # Python package config
+└── .github/workflows/
+    └── update-models.yml       # Daily cron job
 ```
 
 ---
 
 ## Configuration
 
-To run the updater yourself, you need API keys:
+To run the data fetcher yourself:
 
 ```bash
 # .env file
@@ -175,25 +235,35 @@ For GitHub Actions, add these as repository secrets.
 
 ---
 
-## Contributing
+## Self-Hosting
 
-Contributions welcome! Here's how to help:
+### Docker Compose
 
-- **Add a provider**: Create a new fetcher in `src/fetchers/`
-- **Improve enrichment**: Update the Claude prompt in `aggregate_with_claude.py`
-- **Fix pricing**: Update `PRICING_DATA` with latest prices
-- **Enhance the skill**: Improve `SKILL.md` for better Claude responses
+```yaml
+version: '3.8'
+services:
+  llm-radar:
+    image: ghcr.io/ajentsor/llm-radar:latest
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+```
+
+### Cloudflare Workers / Fly.io / Railway
+
+The MCP server supports HTTP/SSE transport, making it deployable to any platform that supports long-running HTTP connections.
 
 ---
 
-## Why This Exists
+## Contributing
 
-AI assistants have training data cutoffs. When you ask about models:
-- You get **old model recommendations** (GPT-4 instead of GPT-4o)
-- **Wrong pricing** (models get cheaper over time)
-- **Missing new models** (o3, Claude 4.5, Gemini 2.5)
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-LLM Radar solves this by maintaining a **living dataset** that updates daily and integrates directly with Claude Code.
+Key areas for contribution:
+- Additional providers (Cohere, Mistral, etc.)
+- More MCP tools
+- Better data enrichment prompts
+- Documentation improvements
 
 ---
 
@@ -207,6 +277,6 @@ MIT License - see [LICENSE](LICENSE)
 
 **Built for developers who want accurate AI model info**
 
-[Star this repo](https://github.com/ajentsor/llm-radar) &bull; [Report Issue](https://github.com/ajentsor/llm-radar/issues) &bull; [View Dashboard](https://ajentsor.github.io/llm-radar)
+[Star this repo](https://github.com/ajentsor/llm-radar) · [Report Issue](https://github.com/ajentsor/llm-radar/issues) · [View Dashboard](https://ajentsor.github.io/llm-radar)
 
 </div>
