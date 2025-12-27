@@ -25,17 +25,28 @@ RAW_DIR = DATA_DIR / "raw"
 # Known pricing data (not available via API, so we maintain it here)
 # Prices are per 1M tokens in USD
 PRICING_DATA = {
-    # OpenAI
+    # OpenAI - GPT-5.x series
+    "gpt-5.2": {"input": 1.75, "output": 14.00},
+    "gpt-5.2-pro": {"input": 3.50, "output": 28.00},
+    "gpt-5.1": {"input": 1.25, "output": 10.00},
+    "gpt-5": {"input": 1.00, "output": 8.00},
+    # OpenAI - GPT-4.x series
     "gpt-4o": {"input": 2.50, "output": 10.00},
     "gpt-4o-mini": {"input": 0.15, "output": 0.60},
     "gpt-4-turbo": {"input": 10.00, "output": 30.00},
     "gpt-4": {"input": 30.00, "output": 60.00},
     "gpt-3.5-turbo": {"input": 0.50, "output": 1.50},
+    # OpenAI - o-series reasoning
+    "o4-mini": {"input": 1.50, "output": 6.00},
+    "o3": {"input": 20.00, "output": 80.00},
+    "o3-mini": {"input": 1.10, "output": 4.40},
     "o1": {"input": 15.00, "output": 60.00},
     "o1-mini": {"input": 3.00, "output": 12.00},
     "o1-pro": {"input": 150.00, "output": 600.00},
-    "o3-mini": {"input": 1.10, "output": 4.40},
     # Anthropic
+    "claude-opus-4-5": {"input": 15.00, "output": 75.00},
+    "claude-sonnet-4-5": {"input": 3.00, "output": 15.00},
+    "claude-haiku-4-5": {"input": 1.00, "output": 5.00},
     "claude-opus-4": {"input": 15.00, "output": 75.00},
     "claude-sonnet-4": {"input": 3.00, "output": 15.00},
     "claude-3-5-sonnet": {"input": 3.00, "output": 15.00},
@@ -43,12 +54,16 @@ PRICING_DATA = {
     "claude-3-opus": {"input": 15.00, "output": 75.00},
     "claude-3-sonnet": {"input": 3.00, "output": 15.00},
     "claude-3-haiku": {"input": 0.25, "output": 1.25},
-    # Google
+    # Google - Gemini 3.x series
+    "gemini-3-flash": {"input": 0.50, "output": 3.00},
+    "gemini-3-pro": {"input": 2.00, "output": 10.00},
+    # Google - Gemini 2.x series
+    "gemini-2.5-pro": {"input": 1.25, "output": 10.00},
+    "gemini-2.5-flash": {"input": 0.15, "output": 0.60},
     "gemini-2.0-flash": {"input": 0.10, "output": 0.40},
     "gemini-2.0-flash-thinking": {"input": 0.70, "output": 3.50},
     "gemini-1.5-pro": {"input": 1.25, "output": 5.00},
     "gemini-1.5-flash": {"input": 0.075, "output": 0.30},
-    "gemini-1.0-pro": {"input": 0.50, "output": 1.50},
 }
 
 
@@ -151,12 +166,13 @@ Create a JSON object with this structure:
 ```
 
 ## Guidelines
-1. Only include production-ready models (skip deprecated, internal, or embedding-only models)
+1. Include all significant models - both production AND preview for newest model families (e.g., Gemini 3, GPT-5.2). Skip deprecated, internal, or embedding-only models.
 2. For each model, infer capabilities from the name and your knowledge
 3. Use the pricing data provided, or null if unknown
 4. For descriptions, be concise and practical - what would a developer want to know?
 5. In the summary, mention if any models are NEW (not in previous list) or notable updates
-6. Current date: {datetime.now(timezone.utc).strftime("%Y-%m-%d")}
+6. IMPORTANT: Include Gemini 3 models even if marked as preview - they are the newest Google models
+7. Current date: {datetime.now(timezone.utc).strftime("%Y-%m-%d")}
 
 Output ONLY the JSON, no markdown code blocks or explanations."""
 
