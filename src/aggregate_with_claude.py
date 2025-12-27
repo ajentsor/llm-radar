@@ -102,13 +102,25 @@ def aggregate_with_claude(raw_data: dict, previous_data: dict | None = None) -> 
                 prev_models.append(f"{m.get('provider', 'unknown')}/{m.get('id', 'unknown')}")
         previous_context = f"\n\nPreviously tracked models: {', '.join(prev_models[:50])}"
 
+    # Sort Google models to prioritize newest (Gemini 3 > 2.5 > 2.0 > 1.5)
+    google_data = raw_data.get('google', {})
+    if 'models' in google_data:
+        def model_priority(m):
+            name = m.get('name', '').lower()
+            if 'gemini-3' in name: return 0
+            if 'gemini-2.5' in name: return 1
+            if 'gemini-2.0' in name or 'gemini-2-' in name: return 2
+            if 'gemini-1.5' in name: return 3
+            return 4
+        google_data['models'] = sorted(google_data['models'], key=model_priority)
+
     prompt = f"""You are an AI model data curator. Analyze the raw API responses from OpenAI, Anthropic, and Google, and create a structured JSON output with enriched information about each model.
 
 ## Raw API Data
 
 ### OpenAI Models
 ```json
-{json.dumps(raw_data.get('openai', {}), indent=2)[:8000]}
+{json.dumps(raw_data.get('openai', {}), indent=2)[:12000]}
 ```
 
 ### Anthropic Models
@@ -118,7 +130,7 @@ def aggregate_with_claude(raw_data: dict, previous_data: dict | None = None) -> 
 
 ### Google Gemini Models
 ```json
-{json.dumps(raw_data.get('google', {}), indent=2)[:8000]}
+{json.dumps(google_data, indent=2)[:12000]}
 ```
 
 ## Known Pricing (per 1M tokens USD)
