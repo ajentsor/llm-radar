@@ -16,10 +16,10 @@ Usage:
 import argparse
 import asyncio
 import json
-import sys
-from pathlib import Path
+import time
 from typing import Any
 
+import httpx
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import (
@@ -28,23 +28,38 @@ from mcp.types import (
     Tool,
 )
 
-# Resolve data directory
-if getattr(sys, 'frozen', False):
-    BASE_DIR = Path(sys.executable).parent
-else:
-    BASE_DIR = Path(__file__).parent.parent.parent
+# Remote data source
+MODELS_URL = "https://llm-radar.ajents.company/models.json"
 
-DATA_DIR = BASE_DIR / "data"
+# Cache configuration
+_cache: dict = {"data": None, "timestamp": 0}
+CACHE_TTL_SECONDS = 300  # 5 minutes
 
 
-def load_models_data() -> dict:
-    """Load the models.json data file."""
-    models_file = DATA_DIR / "models.json"
-    if not models_file.exists():
-        return {"error": "models.json not found", "providers": {}}
+async def load_models_data() -> dict:
+    """Fetch models.json from Cloudflare, with caching."""
+    now = time.time()
 
-    with open(models_file) as f:
-        return json.load(f)
+    # Return cached data if still valid
+    if _cache["data"] and (now - _cache["timestamp"]) < CACHE_TTL_SECONDS:
+        return _cache["data"]
+
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.get(MODELS_URL, timeout=10.0)
+            response.raise_for_status()
+            data = response.json()
+
+            # Update cache
+            _cache["data"] = data
+            _cache["timestamp"] = now
+
+            return data
+    except Exception as e:
+        # If fetch fails but we have cached data, return it (stale is better than nothing)
+        if _cache["data"]:
+            return _cache["data"]
+        return {"error": f"Failed to fetch models: {e}", "providers": {}}
 
 
 def get_all_models(data: dict) -> list[dict]:
@@ -170,7 +185,7 @@ def create_server() -> Server:
     @server.read_resource()
     async def read_resource(uri: str) -> str:
         """Read a specific resource."""
-        data = load_models_data()
+        data = await load_models_data()
 
         if uri == "llm-radar://models/all":
             return json.dumps(data, indent=2)
@@ -277,7 +292,7 @@ def create_server() -> Server:
     @server.call_tool()
     async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
         """Handle tool calls."""
-        data = load_models_data()
+        data = await load_models_data()
         all_models = get_all_models(data)
 
         if name == "query_models":
