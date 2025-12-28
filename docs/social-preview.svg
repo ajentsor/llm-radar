@@ -34,7 +34,7 @@
   <text x="640" y="200" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="96" font-weight="700" fill="url(#accent)">LLM Radar</text>
 
   <!-- Subtitle -->
-  <text x="640" y="280" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="32" fill="#71717a">MCP Server for Real-time AI Model Intelligence</text>
+  <text x="640" y="280" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="36" fill="#71717a">Skip the search. Your AI already has current model info.</text>
 
   <!-- Provider logos/badges -->
   <g transform="translate(640, 380)">

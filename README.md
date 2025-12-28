@@ -9,7 +9,7 @@
 [![MCP Server](https://img.shields.io/badge/MCP-Server-orange.svg)](https://modelcontextprotocol.io)
 [![Updated Daily](https://img.shields.io/badge/data-updated%20daily-brightgreen.svg)](data/)
 
-**Stop guessing which AI model to use. Get the data.**
+**Skip the search. Your AI already has current model info.**
 
 [Live Dashboard](https://llm-radar.ajents.company) · [Model Reference](data/MODELS.md) · [MCP Setup](#mcp-server-setup) · [Contributing](CONTRIBUTING.md)
 
@@ -19,9 +19,11 @@
 
 ## What is LLM Radar?
 
-LLM Radar is an **MCP (Model Context Protocol) server** that provides real-time information about AI models from OpenAI, Anthropic, and Google.
+LLM Radar is an **MCP server** that gives your AI assistant current information about AI models from OpenAI, Anthropic, and Google.
 
-AI assistants have training data cutoffs, so they often recommend outdated models, wrong pricing, or deprecated APIs. LLM Radar solves this by:
+**The problem:** AI assistants have training cutoffs. Ask about models and you get outdated recommendations, deprecated APIs, or hallucinated pricing.
+
+**The solution:** Connect LLM Radar and your AI already knows what's available today:
 
 - Fetching fresh data from provider APIs **daily**
 - Enriching it with Claude for better descriptions
