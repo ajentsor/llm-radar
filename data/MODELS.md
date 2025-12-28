@@ -1,16 +1,15 @@
-# AI Models Directory
+# AI Models Reference
 
-**Last Updated:** December 28, 2025
-
-**Summary:** 84 OpenAI models including GPT-5.2, GPT-5.1, O-series reasoning models, and audio capabilities; 8 Anthropic Claude models up to version 4.5; 32 Google Gemini models including 3.0 preview and 2.5 versions with multimodal support.
+**Last Updated:** December 28, 2025  
+**Summary:** 84 OpenAI models including GPT-5.2, GPT-5.1, O-series reasoning models, and GPT-4o variants; 8 Anthropic Claude models up to version 4.5; 32 Google Gemini models including 3.0 preview and 2.5 versions.
 
 ## OpenAI
 
-**Website:** https://openai.com | **API Docs:** https://platform.openai.com/docs
+**Provider:** [OpenAI](https://openai.com) | **API Docs:** [platform.openai.com/docs](https://platform.openai.com/docs)
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
-| `chatgpt-image-latest` | image | active | text, image |
+| `chatgpt-image-latest` | image | active | text |
 | `gpt-4o-mini-tts-2025-12-15` | audio | active | text |
 | `gpt-4o-mini-transcribe-2025-12-15` | audio | active | audio |
 | `gpt-5.2-chat-latest` | chat | active | text |
@@ -38,8 +37,8 @@
 | `o4-mini` | reasoning | active | text |
 | `o3` | reasoning | active | text |
 | `o1-pro` | reasoning | active | text |
-| `gpt-4o-mini-search-preview` | chat | preview | text |
-| `gpt-4o-search-preview` | chat | preview | text |
+| `gpt-4o-mini-search-preview` | chat | preview | text, image |
+| `gpt-4o-search-preview` | chat | preview | text, image |
 | `o3-mini` | reasoning | active | text |
 | `gpt-4o-mini-audio-preview` | audio | preview | text, audio |
 | `gpt-4o-mini-realtime-preview` | audio | preview | text, audio |
@@ -55,7 +54,7 @@
 
 ## Anthropic
 
-**Website:** https://anthropic.com | **API Docs:** https://docs.anthropic.com
+**Provider:** [Anthropic](https://anthropic.com) | **API Docs:** [docs.anthropic.com](https://docs.anthropic.com)
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
@@ -70,26 +69,21 @@
 
 ## Google
 
-**Website:** https://ai.google.dev | **API Docs:** https://ai.google.dev/docs
+**Provider:** [Google](https://cloud.google.com) | **API Docs:** [cloud.google.com/vertex-ai/docs](https://cloud.google.com/vertex-ai/docs)
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
-| `models/gemini-3-pro-preview` | chat | preview | text |
-| `models/gemini-3-flash-preview` | chat | preview | text |
-| `models/gemini-2.5-flash` | chat | active | text |
-| `models/gemini-2.5-pro` | chat | active | text |
-| `models/gemini-2.5-flash-lite` | chat | active | text |
-| `models/gemini-2.5-computer-use-preview-10-2025` | chat | preview | text |
-| `models/gemini-2.5-flash-native-audio-latest` | audio | active | text, audio |
-| `models/gemini-2.0-flash-exp` | chat | preview | text |
-| `models/gemini-2.0-flash` | chat | active | text |
-| `models/gemini-2.0-flash-exp-image-generation` | image | preview | text |
-| `models/gemini-2.0-flash-lite` | chat | active | text |
+| `gemini-3-pro-preview` | chat | preview | text |
+| `gemini-3-flash-preview` | chat | preview | text |
+| `gemini-2.5-flash` | chat | active | text |
+| `gemini-2.5-pro` | chat | active | text |
+| `gemini-2.5-flash-lite` | chat | active | text |
+| `gemini-2.0-flash` | chat | active | text |
+| `gemini-2.0-flash-lite` | chat | active | text |
 
 ## Notes
 
-- **Model ID** is the exact string to use in API calls
-- **Input Modalities** show supported input types (text, image, audio)
-- **Status** indicates availability: `active` (production ready), `preview` (experimental/beta)
-- Reasoning models (O-series) are designed for complex problem-solving tasks
-- Audio models support various capabilities: transcription, text-to-speech, and real-time interaction
+- **Multimodal Models:** Models supporting image/audio input are indicated in the Input Modalities column
+- **Status:** `active` = production ready, `preview` = experimental/beta
+- **Model Types:** `chat` = conversational, `reasoning` = advanced problem-solving, `audio` = speech/transcription, `image` = image generation
+- **Context Window:** Most models support extended context (up to 1M+ tokens for Gemini models)
