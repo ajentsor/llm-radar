@@ -33,23 +33,7 @@ LLM Radar is an **MCP server** that gives your AI assistant current information 
 
 ## MCP Server Setup
 
-### Option 1: Remote Server (Recommended)
-
-Connect directly to the hosted MCP server - no installation needed:
-
-**Claude Desktop config** (`~/Library/Application Support/Claude/claude_desktop_config.json`):
-
-```json
-{
-  "mcpServers": {
-    "llm-radar": {
-      "url": "https://ajents.company/llm-radar/mcp"
-    }
-  }
-}
-```
-
-### Option 2: Local via npx/pip
+### Install via pip
 
 ```bash
 # Install
@@ -211,7 +195,7 @@ llm-radar/
 │   ├── models.json             # Structured model data
 │   ├── MODELS.md               # Human-readable reference
 │   └── raw/                    # Raw API responses
-├── docs/                       # GitHub Pages site
+├── docs/                       # Landing page (Cloudflare)
 ├── Dockerfile                  # Container build
 ├── docker-compose.yml          # Local container setup
 ├── pyproject.toml              # Python package config

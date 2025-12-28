@@ -125,7 +125,7 @@ llm-radar/
 │   ├── models.json         # Structured model data
 │   ├── MODELS.md          # Human-readable reference
 │   └── raw/               # Raw API responses
-├── docs/                   # GitHub Pages site
+├── docs/                   # Landing page (Cloudflare)
 ├── scripts/               # Utility scripts
 └── tests/                 # Test files
 ```

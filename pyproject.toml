@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "llm-radar-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server providing real-time AI model intelligence - pricing, capabilities, and recommendations"
 readme = "README.md"
 license = "MIT"
@@ -42,7 +42,7 @@ dev = [
 llm-radar-mcp = "llm_radar.mcp_server:main"
 
 [project.urls]
-Homepage = "https://ajents.company/llm-radar"
+Homepage = "https://llm-radar.ajents.company"
 Repository = "https://github.com/ajentsor/llm-radar"
 Documentation = "https://github.com/ajentsor/llm-radar#readme"
 
