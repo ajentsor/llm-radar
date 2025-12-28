@@ -58,8 +58,9 @@ def get_all_models(data: dict) -> list[dict]:
 def filter_models(
     models: list[dict],
     provider: str | None = None,
-    capability: str | None = None,
-    max_input_price: float | None = None,
+    model_type: str | None = None,
+    supports_images: bool | None = None,
+    supports_audio: bool | None = None,
     min_context: int | None = None,
 ) -> list[dict]:
     """Filter models by various criteria."""
@@ -68,17 +69,20 @@ def filter_models(
     if provider:
         result = [m for m in result if m.get("provider", "").lower() == provider.lower()]
 
-    if capability:
-        cap_lower = capability.lower()
+    if model_type:
+        type_lower = model_type.lower()
+        result = [m for m in result if m.get("model_type", "").lower() == type_lower]
+
+    if supports_images:
         result = [
             m for m in result
-            if any(cap_lower in c.lower() for c in m.get("capabilities", []))
+            if "image" in m.get("input_modalities", [])
         ]
 
-    if max_input_price is not None:
+    if supports_audio:
         result = [
             m for m in result
-            if m.get("pricing") and m["pricing"].get("input", float("inf")) <= max_input_price
+            if "audio" in m.get("input_modalities", []) or "audio" in m.get("output_modalities", [])
         ]
 
     if min_context is not None:
@@ -92,25 +96,21 @@ def filter_models(
 
 def format_model_summary(model: dict) -> str:
     """Format a model into a readable summary."""
-    pricing = model.get("pricing")
-    price_str = (
-        f"${pricing['input']:.2f}/${pricing['output']:.2f} per 1M tokens"
-        if pricing else "Pricing unknown"
-    )
-
     context = model.get("context_window")
-    context_str = f"{context:,} tokens" if context else "Unknown"
+    context_str = f"{context:,} tokens" if context else "Not specified"
 
-    caps = ", ".join(model.get("capabilities", [])) or "None listed"
+    input_mods = ", ".join(model.get("input_modalities", ["text"]))
+    output_mods = ", ".join(model.get("output_modalities", ["text"]))
 
     return f"""**{model.get('name', model.get('id', 'Unknown'))}** ({model.get('provider', 'unknown')})
-- ID: `{model.get('id', 'unknown')}`
+- API ID: `{model.get('id', 'unknown')}`
+- Type: {model.get('model_type', 'unknown')}
 - {model.get('description', 'No description')}
 - Context: {context_str}
-- Pricing: {price_str}
-- Capabilities: {caps}
-- Recommended for: {model.get('recommended_for', 'General use')}
-- Status: {model.get('status', 'unknown')}"""
+- Input: {input_mods}
+- Output: {output_mods}
+- Status: {model.get('status', 'unknown')}
+- API Accessible: {'Yes' if model.get('api_accessible', True) else 'No'}"""
 
 
 def format_comparison_table(models: list[dict]) -> str:
@@ -118,21 +118,16 @@ def format_comparison_table(models: list[dict]) -> str:
     if not models:
         return "No models to compare."
 
-    lines = ["| Model | Provider | Input $/1M | Output $/1M | Context | Capabilities |",
-             "|-------|----------|------------|-------------|---------|--------------|"]
+    lines = ["| Model ID | Provider | Type | Status | Input | Context |",
+             "|----------|----------|------|--------|-------|---------|"]
 
     for m in models:
-        pricing = m.get("pricing", {})
-        input_price = f"${pricing.get('input', '?')}" if pricing else "?"
-        output_price = f"${pricing.get('output', '?')}" if pricing else "?"
         context = f"{m.get('context_window', '?'):,}" if m.get('context_window') else "?"
-        caps = ", ".join(m.get("capabilities", [])[:3])
-        if len(m.get("capabilities", [])) > 3:
-            caps += "..."
+        input_mods = ", ".join(m.get("input_modalities", ["text"]))
 
         lines.append(
-            f"| {m.get('name', m.get('id', '?'))} | {m.get('provider', '?')} | "
-            f"{input_price} | {output_price} | {context} | {caps} |"
+            f"| `{m.get('id', '?')}` | {m.get('provider', '?')} | "
+            f"{m.get('model_type', '?')} | {m.get('status', '?')} | {input_mods} | {context} |"
         )
 
     return "\n".join(lines)
@@ -170,12 +165,6 @@ def create_server() -> Server:
                 description="All Google Gemini models",
                 mimeType="application/json",
             ),
-            Resource(
-                uri="llm-radar://highlights",
-                name="Model Highlights",
-                description="Curated recommendations: cheapest, most powerful, best for code, etc.",
-                mimeType="application/json",
-            ),
         ]
 
     @server.read_resource()
@@ -185,9 +174,6 @@ def create_server() -> Server:
 
         if uri == "llm-radar://models/all":
             return json.dumps(data, indent=2)
-
-        if uri == "llm-radar://highlights":
-            return json.dumps(data.get("highlights", {}), indent=2)
 
         # Handle provider-specific resources
         provider_map = {
@@ -209,7 +195,7 @@ def create_server() -> Server:
         return [
             Tool(
                 name="query_models",
-                description="Search and filter AI models by provider, capability, price, or context window. Returns matching models with details.",
+                description="Search and filter AI models available via API. Filter by provider, type, or modality support.",
                 inputSchema={
                     "type": "object",
                     "properties": {
@@ -218,13 +204,18 @@ def create_server() -> Server:
                             "description": "Filter by provider: 'openai', 'anthropic', or 'google'",
                             "enum": ["openai", "anthropic", "google"],
                         },
-                        "capability": {
+                        "model_type": {
                             "type": "string",
-                            "description": "Filter by capability: 'vision', 'reasoning', 'code', 'function_calling', etc.",
+                            "description": "Filter by type: 'chat', 'reasoning', 'image', 'audio'",
+                            "enum": ["chat", "reasoning", "image", "audio"],
                         },
-                        "max_input_price": {
-                            "type": "number",
-                            "description": "Maximum input price per 1M tokens in USD",
+                        "supports_images": {
+                            "type": "boolean",
+                            "description": "Only show models that accept image input",
+                        },
+                        "supports_audio": {
+                            "type": "boolean",
+                            "description": "Only show models that support audio input/output",
                         },
                         "min_context": {
                             "type": "integer",
@@ -240,14 +231,14 @@ def create_server() -> Server:
             ),
             Tool(
                 name="compare_models",
-                description="Compare specific models side-by-side. Provide model IDs to get a detailed comparison table.",
+                description="Compare specific models side-by-side. Provide model IDs to get a detailed comparison.",
                 inputSchema={
                     "type": "object",
                     "properties": {
                         "model_ids": {
                             "type": "array",
                             "items": {"type": "string"},
-                            "description": "List of model IDs to compare (e.g., ['gpt-4o', 'claude-3-5-sonnet', 'gemini-1.5-pro'])",
+                            "description": "List of model IDs to compare (e.g., ['gpt-4o', 'claude-opus-4-5-20251101'])",
                         },
                     },
                     "required": ["model_ids"],
@@ -255,36 +246,21 @@ def create_server() -> Server:
             ),
             Tool(
                 name="get_model",
-                description="Get detailed information about a specific model by ID.",
+                description="Get detailed information about a specific model by its API ID.",
                 inputSchema={
                     "type": "object",
                     "properties": {
                         "model_id": {
                             "type": "string",
-                            "description": "The model ID (e.g., 'gpt-4o', 'claude-3-5-sonnet', 'gemini-1.5-pro')",
+                            "description": "The exact model ID used in API calls",
                         },
                     },
                     "required": ["model_id"],
                 },
             ),
             Tool(
-                name="get_recommendations",
-                description="Get model recommendations for specific use cases like 'cheapest', 'most_powerful', 'best_for_code', 'largest_context'.",
-                inputSchema={
-                    "type": "object",
-                    "properties": {
-                        "use_case": {
-                            "type": "string",
-                            "description": "The use case to get recommendations for",
-                            "enum": ["cheapest", "most_powerful", "best_for_code", "largest_context", "all"],
-                        },
-                    },
-                    "required": ["use_case"],
-                },
-            ),
-            Tool(
-                name="get_pricing",
-                description="Get pricing information for models, optionally filtered by provider or sorted by cost.",
+                name="list_model_ids",
+                description="List all available model IDs for a provider. Useful for finding exact API identifiers.",
                 inputSchema={
                     "type": "object",
                     "properties": {
@@ -292,17 +268,6 @@ def create_server() -> Server:
                             "type": "string",
                             "description": "Filter by provider",
                             "enum": ["openai", "anthropic", "google"],
-                        },
-                        "sort_by": {
-                            "type": "string",
-                            "description": "Sort by 'input' or 'output' price",
-                            "enum": ["input", "output"],
-                            "default": "input",
-                        },
-                        "ascending": {
-                            "type": "boolean",
-                            "description": "Sort in ascending order (cheapest first)",
-                            "default": True,
                         },
                     },
                 },
@@ -319,8 +284,9 @@ def create_server() -> Server:
             filtered = filter_models(
                 all_models,
                 provider=arguments.get("provider"),
-                capability=arguments.get("capability"),
-                max_input_price=arguments.get("max_input_price"),
+                model_type=arguments.get("model_type"),
+                supports_images=arguments.get("supports_images"),
+                supports_audio=arguments.get("supports_audio"),
                 min_context=arguments.get("min_context"),
             )
 
@@ -394,53 +360,25 @@ def create_server() -> Server:
 
                 return [TextContent(type="text", text=f"Model '{model_id}' not found.")]
 
-        elif name == "get_recommendations":
-            use_case = arguments.get("use_case", "all")
-            highlights = data.get("highlights", {})
-
-            if use_case == "all":
-                result = "## Model Recommendations\n\n"
-                for key, value in highlights.items():
-                    result += f"**{key.replace('_', ' ').title()}:** {value}\n\n"
-                return [TextContent(type="text", text=result)]
-
-            key_map = {
-                "cheapest": "cheapest_capable",
-                "most_powerful": "most_powerful",
-                "best_for_code": "best_for_code",
-                "largest_context": "largest_context",
-            }
-
-            key = key_map.get(use_case)
-            if key and key in highlights:
-                return [TextContent(
-                    type="text",
-                    text=f"**{use_case.replace('_', ' ').title()}:** {highlights[key]}"
-                )]
-
-            return [TextContent(type="text", text=f"No recommendation found for '{use_case}'.")]
-
-        elif name == "get_pricing":
+        elif name == "list_model_ids":
             provider = arguments.get("provider")
-            sort_by = arguments.get("sort_by", "input")
-            ascending = arguments.get("ascending", True)
+            models = filter_models(all_models, provider=provider) if provider else all_models
 
-            models = filter_models(all_models, provider=provider)
-            models_with_pricing = [m for m in models if m.get("pricing")]
+            result = "## Available Model IDs\n\n"
+            if provider:
+                result += f"Provider: **{provider}**\n\n"
 
-            models_with_pricing.sort(
-                key=lambda m: m["pricing"].get(sort_by, float("inf")),
-                reverse=not ascending,
-            )
+            # Group by provider
+            by_provider: dict[str, list[str]] = {}
+            for m in models:
+                p = m.get("provider", "unknown")
+                if p not in by_provider:
+                    by_provider[p] = []
+                by_provider[p].append(f"`{m.get('id')}`")
 
-            result = "## Pricing Comparison\n\n"
-            result += f"Sorted by **{sort_by}** price ({'ascending' if ascending else 'descending'})\n\n"
-            result += "| Model | Provider | Input $/1M | Output $/1M |\n"
-            result += "|-------|----------|------------|-------------|\n"
-
-            for m in models_with_pricing:
-                p = m["pricing"]
-                result += f"| {m.get('name', m.get('id'))} | {m.get('provider')} | ${p.get('input', '?')} | ${p.get('output', '?')} |\n"
+            for p, ids in by_provider.items():
+                result += f"### {p.title()}\n"
+                result += ", ".join(ids) + "\n\n"
 
             return [TextContent(type="text", text=result)]
 

@@ -51,54 +51,74 @@ class TestFiltering:
 
     @pytest.fixture
     def sample_models(self):
-        """Sample models for testing."""
+        """Sample models for testing with new schema."""
         return [
             {
                 "id": "gpt-4o",
                 "name": "GPT-4o",
                 "provider": "openai",
-                "capabilities": ["vision", "function_calling"],
-                "pricing": {"input": 2.50, "output": 10.00},
+                "api_accessible": True,
+                "model_type": "chat",
+                "input_modalities": ["text", "image"],
+                "output_modalities": ["text"],
                 "context_window": 128000,
+                "status": "active",
             },
             {
                 "id": "claude-3-5-sonnet",
                 "name": "Claude 3.5 Sonnet",
                 "provider": "anthropic",
-                "capabilities": ["vision", "code"],
-                "pricing": {"input": 3.00, "output": 15.00},
+                "api_accessible": True,
+                "model_type": "chat",
+                "input_modalities": ["text"],
+                "output_modalities": ["text"],
                 "context_window": 200000,
+                "status": "active",
             },
             {
                 "id": "gemini-1.5-pro",
                 "name": "Gemini 1.5 Pro",
                 "provider": "google",
-                "capabilities": ["vision", "reasoning"],
-                "pricing": {"input": 1.25, "output": 5.00},
+                "api_accessible": True,
+                "model_type": "chat",
+                "input_modalities": ["text", "image"],
+                "output_modalities": ["text"],
                 "context_window": 1000000,
+                "status": "active",
+            },
+            {
+                "id": "o3",
+                "name": "O3",
+                "provider": "openai",
+                "api_accessible": True,
+                "model_type": "reasoning",
+                "input_modalities": ["text"],
+                "output_modalities": ["text"],
+                "context_window": None,
+                "status": "active",
             },
         ]
 
     def test_filter_by_provider(self, sample_models):
         """Test filtering by provider."""
         result = filter_models(sample_models, provider="openai")
-        assert len(result) == 1
-        assert result[0]["id"] == "gpt-4o"
+        assert len(result) == 2
+        assert all(m["provider"] == "openai" for m in result)
 
-    def test_filter_by_capability(self, sample_models):
-        """Test filtering by capability."""
-        result = filter_models(sample_models, capability="vision")
-        assert len(result) == 3  # All have vision
+    def test_filter_by_model_type(self, sample_models):
+        """Test filtering by model type."""
+        result = filter_models(sample_models, model_type="chat")
+        assert len(result) == 3
 
-        result = filter_models(sample_models, capability="code")
+        result = filter_models(sample_models, model_type="reasoning")
         assert len(result) == 1
-        assert result[0]["id"] == "claude-3-5-sonnet"
+        assert result[0]["id"] == "o3"
 
-    def test_filter_by_max_price(self, sample_models):
-        """Test filtering by max input price."""
-        result = filter_models(sample_models, max_input_price=2.00)
-        assert len(result) == 1
-        assert result[0]["id"] == "gemini-1.5-pro"
+    def test_filter_by_supports_images(self, sample_models):
+        """Test filtering by image support."""
+        result = filter_models(sample_models, supports_images=True)
+        assert len(result) == 2
+        assert all("image" in m["input_modalities"] for m in result)
 
     def test_filter_by_min_context(self, sample_models):
         """Test filtering by minimum context window."""
@@ -110,10 +130,12 @@ class TestFiltering:
         """Test multiple filters together."""
         result = filter_models(
             sample_models,
-            capability="vision",
-            max_input_price=3.00,
+            model_type="chat",
+            supports_images=True,
         )
-        assert len(result) == 3
+        assert len(result) == 2
+        assert all(m["model_type"] == "chat" for m in result)
+        assert all("image" in m["input_modalities"] for m in result)
 
 
 class TestFormatting:
@@ -126,18 +148,20 @@ class TestFormatting:
             "name": "GPT-4o",
             "provider": "openai",
             "description": "Fast and capable multimodal model",
-            "capabilities": ["vision", "function_calling"],
-            "pricing": {"input": 2.50, "output": 10.00},
+            "api_accessible": True,
+            "model_type": "chat",
+            "input_modalities": ["text", "image"],
+            "output_modalities": ["text"],
             "context_window": 128000,
-            "recommended_for": "General tasks",
             "status": "active",
         }
 
         summary = format_model_summary(model)
         assert "GPT-4o" in summary
         assert "openai" in summary
-        assert "$2.50" in summary
+        assert "gpt-4o" in summary  # API ID
         assert "128,000 tokens" in summary
+        assert "API Accessible: Yes" in summary
 
     def test_format_comparison_table(self):
         """Test comparison table formatting."""
@@ -146,16 +170,18 @@ class TestFormatting:
                 "id": "gpt-4o",
                 "name": "GPT-4o",
                 "provider": "openai",
-                "capabilities": ["vision"],
-                "pricing": {"input": 2.50, "output": 10.00},
+                "model_type": "chat",
+                "input_modalities": ["text", "image"],
                 "context_window": 128000,
+                "status": "active",
             },
         ]
 
         table = format_comparison_table(models)
-        assert "| Model |" in table
-        assert "GPT-4o" in table
+        assert "| Model ID |" in table
+        assert "gpt-4o" in table
         assert "openai" in table
+        assert "chat" in table
 
 
 class TestServerCreation:
@@ -197,6 +223,7 @@ class TestMCPServerIntegration:
                     # Each model should have required fields
                     assert "id" in model
                     assert "provider" in model
+                    assert "api_accessible" in model
 
 
 if __name__ == "__main__":

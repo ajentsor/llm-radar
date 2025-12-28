@@ -18,53 +18,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BASE_DIR = Path(__file__).parent.parent
+BASE_DIR = Path(__file__).parent.parent.parent  # src/llm_radar -> src -> project root
 DATA_DIR = BASE_DIR / "data"
 RAW_DIR = DATA_DIR / "raw"
 
-# Known pricing data (not available via API, so we maintain it here)
-# Prices are per 1M tokens in USD
-PRICING_DATA = {
-    # OpenAI - GPT-5.x series
-    "gpt-5.2": {"input": 1.75, "output": 14.00},
-    "gpt-5.2-pro": {"input": 3.50, "output": 28.00},
-    "gpt-5.1": {"input": 1.25, "output": 10.00},
-    "gpt-5": {"input": 1.00, "output": 8.00},
-    # OpenAI - GPT-4.x series
-    "gpt-4o": {"input": 2.50, "output": 10.00},
-    "gpt-4o-mini": {"input": 0.15, "output": 0.60},
-    "gpt-4-turbo": {"input": 10.00, "output": 30.00},
-    "gpt-4": {"input": 30.00, "output": 60.00},
-    "gpt-3.5-turbo": {"input": 0.50, "output": 1.50},
-    # OpenAI - o-series reasoning
-    "o4-mini": {"input": 1.50, "output": 6.00},
-    "o3": {"input": 20.00, "output": 80.00},
-    "o3-mini": {"input": 1.10, "output": 4.40},
-    "o1": {"input": 15.00, "output": 60.00},
-    "o1-mini": {"input": 3.00, "output": 12.00},
-    "o1-pro": {"input": 150.00, "output": 600.00},
-    # Anthropic
-    "claude-opus-4-5": {"input": 15.00, "output": 75.00},
-    "claude-sonnet-4-5": {"input": 3.00, "output": 15.00},
-    "claude-haiku-4-5": {"input": 1.00, "output": 5.00},
-    "claude-opus-4": {"input": 15.00, "output": 75.00},
-    "claude-sonnet-4": {"input": 3.00, "output": 15.00},
-    "claude-3-5-sonnet": {"input": 3.00, "output": 15.00},
-    "claude-3-5-haiku": {"input": 0.80, "output": 4.00},
-    "claude-3-opus": {"input": 15.00, "output": 75.00},
-    "claude-3-sonnet": {"input": 3.00, "output": 15.00},
-    "claude-3-haiku": {"input": 0.25, "output": 1.25},
-    # Google - Gemini 3.x series
-    "gemini-3-flash": {"input": 0.50, "output": 3.00},
-    "gemini-3-pro": {"input": 2.00, "output": 10.00},
-    # Google - Gemini 2.x series
-    "gemini-2.5-pro": {"input": 1.25, "output": 10.00},
-    "gemini-2.5-flash": {"input": 0.15, "output": 0.60},
-    "gemini-2.0-flash": {"input": 0.10, "output": 0.40},
-    "gemini-2.0-flash-thinking": {"input": 0.70, "output": 3.50},
-    "gemini-1.5-pro": {"input": 1.25, "output": 5.00},
-    "gemini-1.5-flash": {"input": 0.075, "output": 0.30},
-}
+# NOTE: Pricing data removed - was manually maintained and became stale.
+# Focus is now on API accessibility, not pricing.
+# Users should check provider websites for current pricing.
 
 
 def load_raw_data() -> dict:
@@ -114,7 +74,9 @@ def aggregate_with_claude(raw_data: dict, previous_data: dict | None = None) -> 
             return 4
         google_data['models'] = sorted(google_data['models'], key=model_priority)
 
-    prompt = f"""You are an AI model data curator. Analyze the raw API responses from OpenAI, Anthropic, and Google, and create a structured JSON output with enriched information about each model.
+    prompt = f"""You are an AI model data curator. Your job is to help developers understand which models they can ACCESS via API.
+
+CRITICAL: Only report FACTS from the raw API data. Do NOT infer or guess capabilities, context windows, or features.
 
 ## Raw API Data
 
@@ -132,11 +94,6 @@ def aggregate_with_claude(raw_data: dict, previous_data: dict | None = None) -> 
 ```json
 {json.dumps(google_data, indent=2)[:12000]}
 ```
-
-## Known Pricing (per 1M tokens USD)
-```json
-{json.dumps(PRICING_DATA, indent=2)}
-```
 {previous_context}
 
 ## Your Task
@@ -145,48 +102,67 @@ Create a JSON object with this structure:
 ```json
 {{
   "updated_at": "<current ISO timestamp>",
-  "summary": "<1-2 sentence summary of what's notable - new models, key updates>",
+  "summary": "<1-2 sentence factual summary of models available>",
   "providers": {{
     "openai": {{
       "name": "OpenAI",
       "website": "https://openai.com",
+      "api_docs": "https://platform.openai.com/docs",
       "models": [
         {{
-          "id": "<model id for API calls>",
+          "id": "<exact model id from API - this is what developers use>",
           "name": "<human-friendly name>",
           "provider": "openai",
-          "description": "<1 sentence: what this model is best for>",
-          "context_window": <number or null>,
-          "pricing": {{"input": <$/1M>, "output": <$/1M>}} or null,
-          "capabilities": ["<list of: vision, function_calling, streaming, reasoning, code, etc>"],
-          "status": "<active|preview|deprecated>",
-          "released": "<YYYY-MM-DD or null>",
-          "recommended_for": "<use case: e.g., 'General chat, code generation'>"
+          "api_accessible": true,
+          "model_type": "<chat|completion|embedding|image|audio|other>",
+          "description": "<1 sentence based on model name only, no guessing>",
+          "context_window": <only if explicitly in API data, otherwise null>,
+          "input_modalities": ["text"] or ["text", "image"] <only if KNOWN from API>,
+          "output_modalities": ["text"] <only if KNOWN from API>,
+          "status": "<active|preview|deprecated - based on model name hints like 'preview', 'exp'>",
+          "created_timestamp": <unix timestamp from API if available>,
+          "owned_by": "<from API data>"
         }}
       ]
     }},
     "anthropic": {{ ... }},
     "google": {{ ... }}
-  }},
-  "highlights": {{
-    "cheapest_capable": "<model id> - <brief why>",
-    "most_powerful": "<model id> - <brief why>",
-    "best_for_code": "<model id> - <brief why>",
-    "largest_context": "<model id> - <context size>"
   }}
 }}
 ```
 
-## Guidelines
-1. Include all significant models - both production AND preview for newest model families (e.g., Gemini 3, GPT-5.2). Skip deprecated, internal, or embedding-only models.
-2. For each model, infer capabilities from the name and your knowledge
-3. Use the pricing data provided, or null if unknown
-4. For descriptions, be concise and practical - what would a developer want to know?
-5. In the summary, mention if any models are NEW (not in previous list) or notable updates
-6. IMPORTANT: Include Gemini 3 models even if marked as preview - they are the newest Google models
-7. Current date: {datetime.now(timezone.utc).strftime("%Y-%m-%d")}
+## STRICT Guidelines
 
-Output ONLY the JSON, no markdown code blocks or explanations."""
+1. **API Accessible**: All models from these API responses ARE accessible. Set `api_accessible: true`.
+
+2. **Model Selection**:
+   - INCLUDE: All chat/completion models (gpt-*, claude-*, gemini-*)
+   - INCLUDE: Reasoning models (o1, o3, o4)
+   - SKIP: Fine-tune models (ft:*), embedding models (*-embedding-*), internal models
+   - SKIP: Models with "instruct" suffix (these are older)
+   - SKIP: Dated versions if a base version exists (e.g., skip gpt-4o-2024-08-06 if gpt-4o exists)
+
+3. **Model Type Classification**:
+   - "chat" = conversational models (gpt-4*, claude-*, gemini-*)
+   - "reasoning" = o-series models (o1, o3, o4)
+   - "image" = image generation (dall-e, imagen)
+   - "audio" = audio/speech models (tts, whisper, transcribe)
+   - "embedding" = embedding models
+
+4. **DO NOT INFER**:
+   - Do NOT guess context windows - use null unless explicitly in API
+   - Do NOT guess capabilities - only use what's in the API response
+   - Do NOT add pricing - we don't have reliable data
+   - Do NOT invent release dates - use created_timestamp only
+
+5. **Modalities**: Only set if clearly indicated by model name:
+   - "*-vision*" or "4o" = input: ["text", "image"]
+   - "*-audio*" or "*realtime*" = involves audio
+   - Otherwise just ["text"]
+
+6. Current date: {datetime.now(timezone.utc).strftime("%Y-%m-%d")}
+
+Output ONLY valid JSON, no markdown code blocks or explanations."""
 
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
@@ -213,10 +189,10 @@ Output ONLY the JSON, no markdown code blocks or explanations."""
 
 
 def generate_markdown(data: dict) -> str:
-    """Generate a beautiful MODELS.md from the structured data"""
+    """Generate a clean MODELS.md from the structured data"""
     client = anthropic.Anthropic()
 
-    prompt = f"""Generate a beautiful, well-organized Markdown document for developers showing the latest AI models.
+    prompt = f"""Generate a clean, developer-focused Markdown document showing available AI models.
 
 Data:
 ```json
@@ -224,16 +200,15 @@ Data:
 ```
 
 Create a MODELS.md with:
-1. A header with the update date and a brief summary
-2. A "Highlights" section with the best models for different use cases
-3. Organized sections for each provider (OpenAI, Anthropic, Google)
-4. For each model: name, description, key specs (context, pricing), capabilities as badges
-5. Use tables where appropriate for easy scanning
-6. Keep it concise but informative - developers should be able to quickly find what they need
+1. Header with update date and summary
+2. Quick reference table per provider showing: Model ID, Type, Status
+3. The Model ID should be the exact string developers use in API calls
+4. Group by provider (OpenAI, Anthropic, Google)
+5. Note which models support multimodal input (images, audio)
 
-Make it beautiful with good formatting, emoji sparingly for visual interest, and clear hierarchy.
+Keep it factual and scannable. No marketing language. Developers need to quickly find model IDs they can use.
 
-Output ONLY the markdown content, ready to save as MODELS.md."""
+Output ONLY the markdown content."""
 
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
