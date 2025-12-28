@@ -1,0 +1,14 @@
+name = "llm-radar"
+main = "src/worker.js"
+compatibility_date = "2025-01-01"
+workers_dev = true
+
+[assets]
+directory = "./docs"
+binding = "ASSETS"
+
+# Routes for custom subdomain (requires DNS record first)
+# See README for setup instructions
+[[routes]]
+pattern = "llm-radar.ajents.company/*"
+zone_name = "ajents.company"

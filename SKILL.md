@@ -11,9 +11,9 @@ allowed-tools: Read, Glob, Grep
 
 You have access to **daily-updated** information about AI models from OpenAI, Anthropic, and Google Gemini.
 
-## When to Use This Skill
+## When to Use
 
-Use this skill when the user asks about:
+Use this when the user asks about:
 - Which AI model to use for a task
 - Model pricing and costs
 - Model capabilities (vision, function calling, context windows)

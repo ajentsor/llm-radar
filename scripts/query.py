@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple query helper for the LLM Radar Claude Code skill.
+Simple query helper for the LLM Radar MCP server.
 Usage: python query.py "cheapest model with vision"
 """
 

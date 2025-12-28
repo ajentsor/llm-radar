@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LLM Radar - Real-time AI Model Intelligence</title>
-    <meta name="description" content="Always up-to-date information about AI models from OpenAI, Anthropic, and Google. Updated daily.">
+    <meta name="description" content="MCP Server for Claude with real-time AI model intelligence. Query, compare, and get recommendations for OpenAI, Anthropic, and Google models. Updated daily.">
 
     <!-- Open Graph -->
     <meta property="og:title" content="LLM Radar">
-    <meta property="og:description" content="Real-time AI Model Intelligence - Updated Daily">
+    <meta property="og:description" content="MCP Server for Claude - Real-time AI Model Intelligence">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://llm-radar.ajents.company/social-preview.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://llm-radar.ajents.company/social-preview.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -309,7 +314,7 @@
     <section class="hero">
         <div class="container">
             <h1 class="logo">LLM Radar</h1>
-            <p class="tagline">Real-time AI Model Intelligence</p>
+            <p class="tagline">MCP Server for Real-time AI Model Intelligence</p>
             <div class="badge">
                 <span class="dot"></span>
                 <span id="update-time">Updated daily</span>
@@ -343,16 +348,64 @@
 
     <section class="cta">
         <div class="container">
-            <h2 class="cta-title">Use in Claude Code</h2>
-            <p class="cta-text">Install the skill and ask Claude about models naturally. No more searching for outdated information.</p>
-            <div class="code-block">
-                git clone https://github.com/ajentsor/llm-radar.git ~/.claude/skills/llm-radar
+            <h2 class="cta-title">MCP Server for Claude</h2>
+            <p class="cta-text">Add real-time AI model intelligence to Claude Desktop or any MCP-compatible client. Ask about models naturally with always up-to-date information.</p>
+
+            <h3 style="font-size: 1.1rem; margin: 32px 0 16px; color: var(--text);">Quick Install</h3>
+            <div class="code-block"><pre style="margin: 0; white-space: pre-wrap;"><span style="color: var(--text-muted)"># Clone the repository</span>
+git clone https://github.com/ajentsor/llm-radar.git
+cd llm-radar
+
+<span style="color: var(--text-muted)"># Install dependencies</span>
+pip install -e .</pre></div>
+
+            <h3 style="font-size: 1.1rem; margin: 32px 0 16px; color: var(--text);">Add to Claude Desktop</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">Add to your <code style="background: var(--bg); padding: 2px 6px; border-radius: 4px;">claude_desktop_config.json</code>:</p>
+            <div class="code-block"><pre style="margin: 0;">{
+  "mcpServers": {
+    "llm-radar": {
+      "command": "llm-radar-mcp"
+    }
+  }
+}</pre></div>
+
+            <h3 style="font-size: 1.1rem; margin: 32px 0 16px; color: var(--text);">Available Tools</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; text-align: left; max-width: 800px; margin: 0 auto 32px;">
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+                    <code style="color: var(--accent);">query_models</code>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Search models by provider, type, or modality support</p>
+                </div>
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+                    <code style="color: var(--accent);">compare_models</code>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Side-by-side comparison of specific models</p>
+                </div>
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+                    <code style="color: var(--accent);">get_model</code>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Get detailed info about a specific model by API ID</p>
+                </div>
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+                    <code style="color: var(--accent);">list_model_ids</code>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">List all available model IDs for a provider</p>
+                </div>
             </div>
-            <a href="https://github.com/ajentsor/llm-radar" class="btn btn-primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                View on GitHub
-            </a>
-            <a href="MODELS.md" class="btn btn-secondary">View Full Reference</a>
+
+            <h3 style="font-size: 1.1rem; margin: 32px 0 16px; color: var(--text);">Example Usage</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">Just ask Claude naturally:</p>
+            <div class="code-block" style="text-align: left;"><pre style="margin: 0;">"What models support vision input?"
+
+"Compare GPT-4o vs Claude Sonnet vs Gemini 2.5 Pro"
+
+"List all OpenAI model IDs available via API"
+
+"Which Google models support audio output?"</pre></div>
+
+            <div style="margin-top: 32px;">
+                <a href="https://github.com/ajentsor/llm-radar" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+                <a href="models.json" class="btn btn-secondary">Raw JSON API</a>
+            </div>
         </div>
     </section>
 

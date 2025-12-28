@@ -11,7 +11,7 @@
 
 **Stop guessing which AI model to use. Get the data.**
 
-[Live Dashboard](https://ajentsor.github.io/llm-radar) · [Model Reference](data/MODELS.md) · [MCP Setup](#mcp-server-setup) · [Contributing](CONTRIBUTING.md)
+[Live Dashboard](https://llm-radar.ajents.company) · [Model Reference](data/MODELS.md) · [MCP Setup](#mcp-server-setup) · [Contributing](CONTRIBUTING.md)
 
 </div>
 
@@ -85,23 +85,22 @@ Once connected, you can use these tools:
 
 | Tool | Description |
 |------|-------------|
-| `query_models` | Search/filter models by provider, capability, price, context |
+| `query_models` | Search/filter models by provider, type, or modality support |
 | `compare_models` | Side-by-side comparison of specific models |
-| `get_model` | Get detailed info about a specific model |
-| `get_recommendations` | Get curated picks: cheapest, most powerful, best for code |
-| `get_pricing` | Get pricing sorted by cost |
+| `get_model` | Get detailed info about a specific model by API ID |
+| `list_model_ids` | List all available model IDs for a provider |
 
 ### Example Queries
 
 ```
-"What's the cheapest model with vision?"
-→ Uses query_models with capability="vision", sorted by price
+"What models support vision input?"
+→ Uses query_models with input_modality="image"
 
-"Compare GPT-4o, Claude 3.5 Sonnet, and Gemini 1.5 Pro"
+"Compare GPT-4o, Claude Sonnet, and Gemini 2.5 Pro"
 → Uses compare_models with those model IDs
 
-"Which model should I use for code generation?"
-→ Uses get_recommendations with use_case="best_for_code"
+"List all OpenAI model IDs"
+→ Uses list_model_ids with provider="openai"
 ```
 
 ---
@@ -277,6 +276,6 @@ MIT License - see [LICENSE](LICENSE)
 
 **Built for developers who want accurate AI model info**
 
-[Star this repo](https://github.com/ajentsor/llm-radar) · [Report Issue](https://github.com/ajentsor/llm-radar/issues) · [View Dashboard](https://ajentsor.github.io/llm-radar)
+[Star this repo](https://github.com/ajentsor/llm-radar) · [Report Issue](https://github.com/ajentsor/llm-radar/issues) · [View Dashboard](https://llm-radar.ajents.company)
 
 </div>
