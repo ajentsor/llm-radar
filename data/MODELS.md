@@ -1,12 +1,14 @@
-# Available AI Models
+# AI Models Reference
 
-**Last Updated:** December 28, 2025
+**Last Updated:** 2025-12-28T13:34:03Z
 
-84 OpenAI models, 8 Anthropic Claude models, and 32 Google Gemini models are available via API, including GPT-5.2, Claude 4.5, and Gemini 3 Pro.
+**Summary:** 84 OpenAI models including GPT-5.2, GPT-5.1, O-series reasoning models, and GPT-4o variants; 8 Anthropic Claude models up to version 4.5; 32 Google Gemini models including 3.0 preview and 2.5/2.0 series.
 
-## OpenAI Models
+---
 
-**Provider:** [OpenAI](https://openai.com) | **API Docs:** [platform.openai.com/docs](https://platform.openai.com/docs)
+## OpenAI
+
+**API Documentation:** https://platform.openai.com/docs
 
 | Model ID | Type | Status | Modalities |
 |----------|------|--------|------------|
@@ -28,10 +30,12 @@
 | `gpt-4.1-nano` | chat | active | text |
 | `gpt-4.1-mini` | chat | active | text |
 | `gpt-4.1` | chat | active | text |
-| `gpt-4o-mini-audio-preview` | audio | preview | text, audio |
-| `gpt-4o-mini-realtime-preview` | audio | preview | text, audio |
-| `gpt-4o-audio-preview` | audio | preview | text, audio |
-| `gpt-4o-realtime-preview` | audio | preview | text, audio |
+| `gpt-4o-mini-search-preview` | chat | preview | text, image |
+| `gpt-4o-search-preview` | chat | preview | text, image |
+| `gpt-4o-mini-audio-preview` | audio | preview | text, image, audio |
+| `gpt-4o-mini-realtime-preview` | audio | preview | text, image, audio |
+| `gpt-4o-audio-preview` | audio | preview | text, image, audio |
+| `gpt-4o-realtime-preview` | audio | preview | text, image, audio |
 | `chatgpt-4o-latest` | chat | active | text, image |
 | `gpt-4o` | chat | active | text, image |
 | `gpt-4o-mini` | chat | active | text, image |
@@ -39,9 +43,11 @@
 | `gpt-4` | chat | active | text |
 | `gpt-3.5-turbo` | chat | active | text |
 
-## Anthropic Models
+---
 
-**Provider:** [Anthropic](https://anthropic.com) | **API Docs:** [docs.anthropic.com](https://docs.anthropic.com)
+## Anthropic
+
+**API Documentation:** https://docs.anthropic.com
 
 | Model ID | Type | Status | Modalities |
 |----------|------|--------|------------|
@@ -54,9 +60,11 @@
 | `claude-3-5-haiku-20241022` | chat | active | text |
 | `claude-3-haiku-20240307` | chat | active | text |
 
-## Google Models
+---
 
-**Provider:** [Google](https://ai.google.dev) | **API Docs:** [ai.google.dev/docs](https://ai.google.dev/docs)
+## Google
+
+**API Documentation:** https://ai.google.dev/docs
 
 | Model ID | Type | Status | Modalities |
 |----------|------|--------|------------|
@@ -69,6 +77,4 @@
 | `models/gemini-2.0-flash` | chat | active | text |
 | `models/gemini-2.0-flash-lite` | chat | active | text |
 
----
-
-**Note:** All Google Gemini models have a context window of 1,048,576 tokens. OpenAI and Anthropic models have unspecified context windows.
+**Note:** All Google Gemini models have a context window of 1,048,576 tokens.
