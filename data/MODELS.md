@@ -1,16 +1,16 @@
-# Available AI Models
+# AI Models
 
-**Last Updated:** December 29, 2025 at 08:30 UTC
+**Last Updated:** 2025-12-30T08:29:02Z
 
-**Summary:** 84 OpenAI models, 8 Anthropic Claude models, and 32 Google Gemini models are currently accessible via API, including GPT-5.2, Claude 4.5, and Gemini 3 series.
+84 OpenAI models, 8 Anthropic Claude models, and 32 Google Gemini models are currently accessible via API, including GPT-5.2, Claude 4.5, and Gemini 3 Pro.
 
 ## OpenAI Models
 
-[OpenAI Platform](https://openai.com) | [API Documentation](https://platform.openai.com/docs)
+[API Documentation](https://platform.openai.com/docs) | [Website](https://openai.com)
 
 | Model ID | Type | Status | Multimodal |
 |----------|------|--------|------------|
-| `chatgpt-image-latest` | image | active | ✓ (text, image → text) |
+| `chatgpt-image-latest` | image | active | ✓ (text, image → image) |
 | `gpt-4o-mini-tts-2025-12-15` | audio | active | ✓ (text → audio) |
 | `gpt-4o-mini-transcribe-2025-12-15` | audio | active | ✓ (audio → text) |
 | `gpt-5.2-chat-latest` | chat | active | |
@@ -49,7 +49,7 @@
 
 ## Anthropic Models
 
-[Anthropic](https://anthropic.com) | [API Documentation](https://docs.anthropic.com)
+[API Documentation](https://docs.anthropic.com) | [Website](https://anthropic.com)
 
 | Model ID | Type | Status | Multimodal |
 |----------|------|--------|------------|
@@ -64,7 +64,7 @@
 
 ## Google Models
 
-[Google AI](https://ai.google.dev) | [API Documentation](https://ai.google.dev/docs)
+[API Documentation](https://ai.google.dev/docs) | [Website](https://ai.google.dev)
 
 | Model ID | Type | Status | Multimodal |
 |----------|------|--------|------------|
@@ -74,10 +74,3 @@
 | `gemini-2.5-pro` | chat | active | |
 | `gemini-2.5-flash-preview-tts` | audio | preview | ✓ (text → audio) |
 | `gemini-2.0-flash` | chat | active | |
-
----
-
-**Legend:**
-- **Type:** Model category (chat, audio, image, reasoning)
-- **Status:** active (production-ready) | preview (beta/experimental)
-- **Multimodal:** Models supporting non-text inputs/outputs
