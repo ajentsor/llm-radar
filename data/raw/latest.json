@@ -1,8 +1,8 @@
 {
-  "fetched_at": "2026-01-01T08:28:36.067574+00:00",
+  "fetched_at": "2026-01-02T08:28:49.047865+00:00",
   "openai": {
     "provider": "openai",
-    "fetched_at": "2026-01-01T08:28:35.807086+00:00",
+    "fetched_at": "2026-01-02T08:28:48.614004+00:00",
     "model_count": 84,
     "models": [
       {
@@ -513,7 +513,7 @@
   },
   "anthropic": {
     "provider": "anthropic",
-    "fetched_at": "2026-01-01T08:28:35.921754+00:00",
+    "fetched_at": "2026-01-02T08:28:48.814501+00:00",
     "model_count": 8,
     "models": [
       {
@@ -568,7 +568,7 @@
   },
   "google": {
     "provider": "google",
-    "fetched_at": "2026-01-01T08:28:36.066220+00:00",
+    "fetched_at": "2026-01-02T08:28:49.046498+00:00",
     "model_count": 32,
     "models": [
       {

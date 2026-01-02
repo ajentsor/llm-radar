@@ -1,79 +1,78 @@
-# AI Models Reference
+# Available AI Models
 
-**Last Updated:** January 1, 2026  
-**Summary:** 84 OpenAI models including GPT-5.2, GPT-5.1, o4-mini, o3-mini and o1 series; 8 Anthropic Claude models up to version 4.5; 32 Google Gemini models including 3.0 preview and 2.5 series available via API.
+**Last Updated:** 2026-01-02T08:28:49.046498+00:00
+
+84 OpenAI models, 8 Anthropic Claude models, and 32 Google Gemini models are currently available via API, including GPT-5.2, Claude Opus 4.5, and Gemini 3 Pro Preview.
 
 ## OpenAI
 
-**API Documentation:** https://platform.openai.com/docs
+| Model ID | Type | Status | Input Modalities |
+|----------|------|--------|------------------|
+| `chatgpt-image-latest` | image | active | text, image |
+| `gpt-5.2-chat-latest` | chat | active | text |
+| `gpt-5.2-pro` | chat | active | text |
+| `gpt-5.2` | chat | active | text |
+| `gpt-5.1-codex-max` | chat | active | text |
+| `gpt-5.1-codex` | chat | active | text |
+| `gpt-5.1` | chat | active | text |
+| `gpt-5.1-chat-latest` | chat | active | text |
+| `gpt-5-search-api` | chat | active | text |
+| `gpt-5-pro` | chat | active | text |
+| `gpt-5-codex` | chat | active | text |
+| `gpt-5` | chat | active | text |
+| `gpt-5-chat-latest` | chat | active | text |
+| `o4-mini-deep-research` | reasoning | active | text |
+| `gpt-4o-audio-preview-2025-06-03` | audio | preview | text, audio |
+| `gpt-4o-realtime-preview-2025-06-03` | audio | preview | text, audio |
+| `gpt-4.1` | chat | active | text |
+| `o4-mini` | reasoning | active | text |
+| `o3` | reasoning | active | text |
+| `o1-pro` | reasoning | active | text |
+| `gpt-4o-mini-search-preview` | chat | preview | text, image |
+| `gpt-4o-search-preview` | chat | preview | text, image |
+| `o3-mini` | reasoning | active | text |
+| `gpt-4o-mini-audio-preview` | audio | preview | text, audio |
+| `gpt-4o-mini-realtime-preview` | audio | preview | text, audio |
+| `o1` | reasoning | active | text |
+| `gpt-4o-audio-preview` | audio | preview | text, audio |
+| `gpt-4o-realtime-preview` | audio | preview | text, audio |
+| `chatgpt-4o-latest` | chat | active | text, image |
+| `gpt-4o-mini` | chat | active | text, image |
+| `gpt-4o` | chat | active | text, image |
+| `gpt-4-turbo` | chat | active | text |
+| `gpt-4` | chat | active | text |
+| `gpt-3.5-turbo` | chat | active | text |
 
-| Model ID | Type | Status | Multimodal |
-|----------|------|--------|------------|
-| `chatgpt-image-latest` | image | active | text→image |
-| `gpt-4o-mini-tts-2025-12-15` | audio | active | text→audio |
-| `gpt-4o-mini-transcribe-2025-12-15` | audio | active | audio→text |
-| `gpt-5.2-chat-latest` | chat | active | - |
-| `gpt-5.2-pro` | chat | active | - |
-| `gpt-5.2` | chat | active | - |
-| `gpt-5.1-codex-max` | chat | active | - |
-| `gpt-5.1-codex` | chat | active | - |
-| `gpt-5.1` | chat | active | - |
-| `gpt-5.1-chat-latest` | chat | active | - |
-| `gpt-5-search-api` | chat | active | - |
-| `gpt-5-pro` | chat | active | - |
-| `gpt-5-codex` | chat | active | - |
-| `gpt-5` | chat | active | - |
-| `gpt-5-chat-latest` | chat | active | - |
-| `o4-mini-deep-research` | reasoning | active | - |
-| `gpt-4o-audio-preview-2025-06-03` | audio | preview | text+audio |
-| `gpt-4o-realtime-preview-2025-06-03` | audio | preview | text+audio |
-| `gpt-4.1` | chat | active | - |
-| `o4-mini` | reasoning | active | - |
-| `o3` | reasoning | active | - |
-| `o1-pro` | reasoning | active | - |
-| `gpt-4o-mini-search-preview` | chat | preview | text+image |
-| `gpt-4o-search-preview` | chat | preview | text+image |
-| `o3-mini` | reasoning | active | - |
-| `gpt-4o-mini-audio-preview` | audio | preview | text+audio |
-| `gpt-4o-mini-realtime-preview` | audio | preview | text+audio |
-| `o1` | reasoning | active | - |
-| `gpt-4o-audio-preview` | audio | preview | text+audio |
-| `gpt-4o-realtime-preview` | audio | preview | text+audio |
-| `chatgpt-4o-latest` | chat | active | text+image |
-| `gpt-4o-mini` | chat | active | text+image |
-| `gpt-4o` | chat | active | text+image |
-| `gpt-4-turbo` | chat | active | - |
-| `gpt-4` | chat | active | - |
-| `gpt-3.5-turbo` | chat | active | - |
+**Documentation:** https://platform.openai.com/docs
 
 ## Anthropic
 
-**API Documentation:** https://docs.anthropic.com
+| Model ID | Type | Status | Input Modalities |
+|----------|------|--------|------------------|
+| `claude-opus-4-5-20251101` | chat | active | text |
+| `claude-haiku-4-5-20251001` | chat | active | text |
+| `claude-sonnet-4-5-20250929` | chat | active | text |
+| `claude-opus-4-1-20250805` | chat | active | text |
+| `claude-opus-4-20250514` | chat | active | text |
+| `claude-sonnet-4-20250514` | chat | active | text |
+| `claude-3-5-haiku-20241022` | chat | active | text |
+| `claude-3-haiku-20240307` | chat | active | text |
 
-| Model ID | Type | Status | Multimodal |
-|----------|------|--------|------------|
-| `claude-opus-4-5-20251101` | chat | active | - |
-| `claude-haiku-4-5-20251001` | chat | active | - |
-| `claude-sonnet-4-5-20250929` | chat | active | - |
-| `claude-opus-4-1-20250805` | chat | active | - |
-| `claude-opus-4-20250514` | chat | active | - |
-| `claude-sonnet-4-20250514` | chat | active | - |
-| `claude-3-5-haiku-20241022` | chat | active | - |
-| `claude-3-haiku-20240307` | chat | active | - |
+**Documentation:** https://docs.anthropic.com
 
 ## Google
 
-**API Documentation:** https://ai.google.dev/docs
+| Model ID | Type | Status | Input Modalities | Context Window |
+|----------|------|--------|------------------|----------------|
+| `gemini-3-pro-preview` | chat | preview | text | 1M tokens |
+| `gemini-3-flash-preview` | chat | preview | text | 1M tokens |
+| `gemini-2.5-flash` | chat | active | text | 1M tokens |
+| `gemini-2.5-pro` | chat | active | text | 1M tokens |
+| `gemini-2.5-flash-preview-tts` | audio | preview | text | 8K tokens |
+| `gemini-2.0-flash` | chat | active | text | 1M tokens |
 
-| Model ID | Type | Status | Multimodal |
-|----------|------|--------|------------|
-| `gemini-3-pro-preview` | chat | preview | - |
-| `gemini-3-flash-preview` | chat | preview | - |
-| `gemini-2.5-flash` | chat | active | - |
-| `gemini-2.5-pro` | chat | active | - |
-| `gemini-2.5-flash-preview-tts` | audio | preview | text→audio |
-| `gemini-2.0-flash` | chat | active | - |
+**Documentation:** https://ai.google.dev/docs
 
 ---
 
-**Note:** Model IDs shown above are the exact strings to use in API calls. Multimodal capabilities are indicated where supported (text+image, text+audio, etc.).
+**Note:** Models with `preview` status may have limited availability or experimental features. Audio models support both text and audio input/output. Image models can process both text and image inputs.
