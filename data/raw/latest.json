@@ -1,10 +1,16 @@
 {
-  "fetched_at": "2026-01-14T08:30:19.721257+00:00",
+  "fetched_at": "2026-01-15T08:30:47.617325+00:00",
   "openai": {
     "provider": "openai",
-    "fetched_at": "2026-01-14T08:30:19.479405+00:00",
-    "model_count": 84,
+    "fetched_at": "2026-01-15T08:30:47.209852+00:00",
+    "model_count": 85,
     "models": [
+      {
+        "id": "gpt-5.2-codex",
+        "object": "model",
+        "created": 1766164985,
+        "owned_by": "system"
+      },
       {
         "id": "chatgpt-image-latest",
         "object": "model",
@@ -513,7 +519,7 @@
   },
   "anthropic": {
     "provider": "anthropic",
-    "fetched_at": "2026-01-14T08:30:19.566174+00:00",
+    "fetched_at": "2026-01-15T08:30:47.386773+00:00",
     "model_count": 8,
     "models": [
       {
@@ -568,7 +574,7 @@
   },
   "google": {
     "provider": "google",
-    "fetched_at": "2026-01-14T08:30:19.719221+00:00",
+    "fetched_at": "2026-01-15T08:30:47.615813+00:00",
     "model_count": 32,
     "models": [
       {
