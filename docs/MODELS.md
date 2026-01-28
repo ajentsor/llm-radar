@@ -1,18 +1,17 @@
 # AI Models Reference
 
-**Last Updated:** January 27, 2026
+**Last Updated:** January 28, 2026
 
-**Summary:** 85 OpenAI models including GPT-5.2, GPT-5.1, GPT-5, O-series reasoning models, and audio capabilities; 8 Anthropic Claude models up to version 4.5; 31 Google Gemini models including 3.0 preview and 2.5 versions.
+**Summary:** 85 models available from OpenAI including GPT-5.2, O-series reasoning models, and audio capabilities. 8 models from Anthropic with Claude 4.5 series. 26 models from Google including Gemini 3 and 2.5 series with multi-modal support.
 
 ## OpenAI
 
-**Documentation:** https://platform.openai.com/docs  
-**API Base:** https://api.openai.com
+**Provider:** [OpenAI](https://openai.com) | [API Documentation](https://platform.openai.com/docs)
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
 | `gpt-5.2-codex` | chat | active | text |
-| `chatgpt-image-latest` | image | active | text |
+| `chatgpt-image-latest` | image | active | text, image |
 | `gpt-4o-mini-tts-2025-12-15` | audio | active | text |
 | `gpt-4o-mini-transcribe-2025-12-15` | audio | active | audio |
 | `gpt-5.2-chat-latest` | chat | active | text |
@@ -36,7 +35,7 @@
 | `o3` | reasoning | active | text |
 | `o1-pro` | reasoning | active | text |
 | `gpt-4o-mini-search-preview` | chat | preview | text |
-| `gpt-4o-search-preview` | chat | preview | text |
+| `gpt-4o-search-preview` | chat | preview | text, image |
 | `o3-mini` | reasoning | active | text |
 | `gpt-4o-mini-audio-preview` | audio | preview | text, audio |
 | `gpt-4o-mini-realtime-preview` | audio | preview | text, audio |
@@ -52,8 +51,7 @@
 
 ## Anthropic
 
-**Documentation:** https://docs.anthropic.com  
-**API Base:** https://api.anthropic.com
+**Provider:** [Anthropic](https://anthropic.com) | [API Documentation](https://docs.anthropic.com)
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
@@ -68,28 +66,17 @@
 
 ## Google
 
-**Documentation:** https://ai.google.dev/docs  
-**API Base:** https://generativelanguage.googleapis.com
+**Provider:** [Google](https://ai.google.dev) | [API Documentation](https://ai.google.dev/docs)
 
-| Model ID | Type | Status | Input Modalities | Context Window |
-|----------|------|--------|------------------|----------------|
-| `models/gemini-3-pro-preview` | chat | preview | text | 1,048,576 |
-| `models/gemini-3-flash-preview` | chat | preview | text | 1,048,576 |
-| `models/gemini-3-pro-image-preview` | chat | preview | text, image | 131,072 |
-| `models/gemini-2.5-flash` | chat | active | text | 1,048,576 |
-| `models/gemini-2.5-pro` | chat | active | text | 1,048,576 |
-| `models/gemini-2.5-flash-lite` | chat | active | text | 1,048,576 |
-| `models/gemini-2.0-flash` | chat | active | text | 1,048,576 |
-| `models/gemini-2.0-flash-lite` | chat | active | text | 1,048,576 |
-
-## Model Types
-
-- **chat**: Text-to-text conversation models
-- **reasoning**: Advanced reasoning and problem-solving models
-- **audio**: Speech/audio processing (TTS, STT, realtime)
-- **image**: Image generation models
-
-## Status Indicators
-
-- **active**: Generally available for production use
-- **preview**: Early access, may have limitations or changes
+| Model ID | Type | Status | Input Modalities |
+|----------|------|--------|------------------|
+| `models/gemini-3-pro-preview` | chat | preview | text |
+| `models/gemini-3-flash-preview` | chat | preview | text |
+| `models/gemini-3-pro-image-preview` | chat | preview | text, image |
+| `models/gemini-2.5-flash` | chat | active | text |
+| `models/gemini-2.5-pro` | chat | active | text |
+| `models/gemini-2.5-flash-lite` | chat | active | text |
+| `models/gemini-2.5-computer-use-preview-10-2025` | chat | preview | text |
+| `models/gemini-2.5-flash-native-audio-latest` | audio | active | text, audio |
+| `models/gemini-2.0-flash` | chat | active | text |
+| `models/gemini-2.0-flash-lite` | chat | active | text |
