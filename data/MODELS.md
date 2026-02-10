@@ -1,13 +1,12 @@
-# AI Models Reference
+# AI Models
 
-**Last Updated:** February 5, 2026
+**Last Updated:** February 10, 2026
 
-**Summary:** 85 OpenAI models including GPT-5.2, GPT-5.1, GPT-5, O-series reasoning models, and GPT-4 variants; 8 Anthropic Claude models up to version 4.5; 26 Google Gemini models including version 3.0 and 2.5 variants.
+85 OpenAI models, 9 Anthropic Claude models, and 26 Google Gemini models are currently accessible via API, including latest GPT-5.2, Claude Opus 4.6, and Gemini 3 Pro Preview models.
 
 ## OpenAI
 
-**Website:** https://openai.com  
-**API Docs:** https://platform.openai.com/docs
+[API Documentation](https://platform.openai.com/docs) | [Website](https://openai.com)
 
 | Model ID | Type | Status | Modalities |
 |----------|------|--------|------------|
@@ -43,7 +42,7 @@
 | `o1` | reasoning | active | text |
 | `gpt-4o-realtime-preview` | audio | preview | text, audio |
 | `gpt-4o-audio-preview` | audio | preview | text, audio |
-| `chatgpt-4o-latest` | chat | active | text |
+| `chatgpt-4o-latest` | chat | active | text, image |
 | `gpt-4o-mini` | chat | active | text, image |
 | `gpt-4o` | chat | active | text, image |
 | `gpt-4-turbo` | chat | active | text |
@@ -52,11 +51,11 @@
 
 ## Anthropic
 
-**Website:** https://anthropic.com  
-**API Docs:** https://docs.anthropic.com
+[API Documentation](https://docs.anthropic.com) | [Website](https://anthropic.com)
 
 | Model ID | Type | Status | Modalities |
 |----------|------|--------|------------|
+| `claude-opus-4-6` | chat | active | text |
 | `claude-opus-4-5-20251101` | chat | active | text |
 | `claude-haiku-4-5-20251001` | chat | active | text |
 | `claude-sonnet-4-5-20250929` | chat | active | text |
@@ -68,8 +67,7 @@
 
 ## Google
 
-**Website:** https://ai.google.dev  
-**API Docs:** https://ai.google.dev/docs
+[API Documentation](https://cloud.google.com/vertex-ai/generative-ai/docs) | [Website](https://cloud.google.com)
 
 | Model ID | Type | Status | Modalities |
 |----------|------|--------|------------|
@@ -79,9 +77,10 @@
 | `models/gemini-2.5-flash` | chat | active | text |
 | `models/gemini-2.5-pro` | chat | active | text |
 | `models/gemini-2.5-flash-preview-tts` | audio | preview | text → audio |
+| `models/gemini-2.5-pro-preview-tts` | audio | preview | text → audio |
 | `models/gemini-2.5-flash-lite` | chat | active | text |
 | `models/gemini-2.5-computer-use-preview-10-2025` | chat | preview | text |
-| `models/gemini-2.5-flash-native-audio-latest` | audio | active | text, audio |
+| `models/gemini-2.5-flash-native-audio-latest` | audio | active | audio |
 | `models/gemini-2.0-flash` | chat | active | text |
-| `models/gemini-2.0-flash-exp-image-generation` | image | preview | text → text, image |
+| `models/gemini-2.0-flash-exp-image-generation` | image | preview | text → image |
 | `models/gemini-2.0-flash-lite` | chat | active | text |

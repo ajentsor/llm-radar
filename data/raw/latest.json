@@ -1,8 +1,8 @@
 {
-  "fetched_at": "2026-02-05T08:41:42.763422+00:00",
+  "fetched_at": "2026-02-10T08:55:29.351480+00:00",
   "openai": {
     "provider": "openai",
-    "fetched_at": "2026-02-05T08:41:42.527978+00:00",
+    "fetched_at": "2026-02-10T08:55:29.082645+00:00",
     "model_count": 85,
     "models": [
       {
@@ -519,9 +519,15 @@
   },
   "anthropic": {
     "provider": "anthropic",
-    "fetched_at": "2026-02-05T08:41:42.666492+00:00",
-    "model_count": 8,
+    "fetched_at": "2026-02-10T08:55:29.250707+00:00",
+    "model_count": 9,
     "models": [
+      {
+        "type": "model",
+        "id": "claude-opus-4-6",
+        "display_name": "Claude Opus 4.6",
+        "created_at": "2026-02-04T00:00:00Z"
+      },
       {
         "type": "model",
         "id": "claude-opus-4-5-20251101",
@@ -574,7 +580,7 @@
   },
   "google": {
     "provider": "google",
-    "fetched_at": "2026-02-05T08:41:42.762161+00:00",
+    "fetched_at": "2026-02-10T08:55:29.350035+00:00",
     "model_count": 26,
     "models": [
       {
