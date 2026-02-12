@@ -1,14 +1,17 @@
 # AI Models Reference
 
-**Last Updated:** February 11, 2026  
-**Summary:** 85 OpenAI models, 9 Anthropic models, and 26 Google Gemini models are accessible via API, including GPT-5.2, Claude Opus 4.6, and Gemini 3 Pro Preview.
+**Last Updated:** 2026-02-12 08:45:34 UTC
 
-## OpenAI Models
+**Summary:** 85 OpenAI models including GPT-5.2 series, o-series reasoning models, and GPT-4o variants; 9 Anthropic Claude models up to Opus 4.6; 26 Google Gemini models including 3.0 preview versions.
+
+## OpenAI
+
+📄 [API Documentation](https://platform.openai.com/docs) | 🌐 [Website](https://openai.com)
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
 | `gpt-5.2-codex` | chat | active | text |
-| `chatgpt-image-latest` | image | active | text |
+| `chatgpt-image-latest` | image | active | text, image |
 | `gpt-4o-mini-tts-2025-12-15` | audio | active | text |
 | `gpt-4o-mini-transcribe-2025-12-15` | audio | active | audio |
 | `gpt-5.2-chat-latest` | chat | active | text |
@@ -46,7 +49,9 @@
 | `gpt-4` | chat | active | text |
 | `gpt-3.5-turbo` | chat | active | text |
 
-## Anthropic Models
+## Anthropic
+
+📄 [API Documentation](https://docs.anthropic.com) | 🌐 [Website](https://anthropic.com)
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
@@ -60,7 +65,9 @@
 | `claude-3-5-haiku-20241022` | chat | active | text |
 | `claude-3-haiku-20240307` | chat | active | text |
 
-## Google Models
+## Google
+
+📄 [API Documentation](https://cloud.google.com/vertex-ai/docs) | 🌐 [Website](https://cloud.google.com)
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
@@ -70,11 +77,13 @@
 | `models/gemini-2.5-flash` | chat | active | text |
 | `models/gemini-2.5-pro` | chat | active | text |
 | `models/gemini-2.5-flash-lite` | chat | active | text |
+| `models/gemini-2.5-computer-use-preview-10-2025` | chat | preview | text |
+| `models/gemini-2.5-flash-native-audio-latest` | audio | active | text, audio |
 | `models/gemini-2.0-flash` | chat | active | text |
 | `models/gemini-2.0-flash-lite` | chat | active | text |
 
-## Provider Documentation
+## Legend
 
-- **OpenAI**: [platform.openai.com/docs](https://platform.openai.com/docs)
-- **Anthropic**: [docs.anthropic.com](https://docs.anthropic.com)
-- **Google**: [ai.google.dev/docs](https://ai.google.dev/docs)
+- **Type:** Model capability category (chat, reasoning, audio, image)
+- **Status:** active = production ready, preview = beta/experimental
+- **Input Modalities:** Supported input types (text, image, audio)
