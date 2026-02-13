@@ -1,12 +1,14 @@
-# AI Models Reference
+# AI Models Directory
 
-**Last Updated:** 2026-02-12 08:45:34 UTC
+**Last Updated:** February 13, 2026
 
-**Summary:** 85 OpenAI models including GPT-5.2 series, o-series reasoning models, and GPT-4o variants; 9 Anthropic Claude models up to Opus 4.6; 26 Google Gemini models including 3.0 preview versions.
+**Summary:** 85 OpenAI models including GPT-5.2, O-series reasoning models, and audio capabilities; 9 Anthropic Claude models up to Opus 4.6; 26 Google Gemini models including 3.0 previews and multimodal variants.
+
+---
 
 ## OpenAI
 
-📄 [API Documentation](https://platform.openai.com/docs) | 🌐 [Website](https://openai.com)
+**API Documentation:** https://platform.openai.com/docs
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
@@ -34,14 +36,14 @@
 | `o4-mini` | reasoning | active | text |
 | `o3` | reasoning | active | text |
 | `o1-pro` | reasoning | active | text |
-| `gpt-4o-mini-search-preview` | chat | preview | text, image |
+| `gpt-4o-mini-search-preview` | chat | preview | text |
 | `gpt-4o-search-preview` | chat | preview | text, image |
 | `o3-mini` | reasoning | active | text |
 | `gpt-4o-mini-audio-preview` | audio | preview | text, audio |
 | `gpt-4o-mini-realtime-preview` | audio | preview | text, audio |
 | `o1` | reasoning | active | text |
-| `gpt-4o-realtime-preview` | audio | preview | text, audio |
-| `gpt-4o-audio-preview` | audio | preview | text, audio |
+| `gpt-4o-realtime-preview` | audio | preview | text, image, audio |
+| `gpt-4o-audio-preview` | audio | preview | text, image, audio |
 | `chatgpt-4o-latest` | chat | active | text, image |
 | `gpt-4o-mini` | chat | active | text, image |
 | `gpt-4o` | chat | active | text, image |
@@ -49,9 +51,11 @@
 | `gpt-4` | chat | active | text |
 | `gpt-3.5-turbo` | chat | active | text |
 
+---
+
 ## Anthropic
 
-📄 [API Documentation](https://docs.anthropic.com) | 🌐 [Website](https://anthropic.com)
+**API Documentation:** https://docs.anthropic.com
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
@@ -65,9 +69,11 @@
 | `claude-3-5-haiku-20241022` | chat | active | text |
 | `claude-3-haiku-20240307` | chat | active | text |
 
+---
+
 ## Google
 
-📄 [API Documentation](https://cloud.google.com/vertex-ai/docs) | 🌐 [Website](https://cloud.google.com)
+**API Documentation:** https://ai.google.dev/docs
 
 | Model ID | Type | Status | Input Modalities |
 |----------|------|--------|------------------|
@@ -77,13 +83,19 @@
 | `models/gemini-2.5-flash` | chat | active | text |
 | `models/gemini-2.5-pro` | chat | active | text |
 | `models/gemini-2.5-flash-lite` | chat | active | text |
-| `models/gemini-2.5-computer-use-preview-10-2025` | chat | preview | text |
-| `models/gemini-2.5-flash-native-audio-latest` | audio | active | text, audio |
 | `models/gemini-2.0-flash` | chat | active | text |
 | `models/gemini-2.0-flash-lite` | chat | active | text |
 
-## Legend
+---
 
-- **Type:** Model capability category (chat, reasoning, audio, image)
-- **Status:** active = production ready, preview = beta/experimental
-- **Input Modalities:** Supported input types (text, image, audio)
+## Model Types
+
+- **chat**: Text-based conversational models
+- **reasoning**: Models optimized for complex reasoning tasks
+- **audio**: Models with speech/audio input/output capabilities
+- **image**: Models specialized for image processing
+
+## Status Definitions
+
+- **active**: Production-ready models
+- **preview**: Beta/experimental models, may have limitations
