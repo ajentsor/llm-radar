@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-02-19T08:42:30.041727+00:00",
-  "summary": "94 models accessible via API across OpenAI (84 models), Anthropic (10 models), and Google (26 models), including latest GPT-5.2, Claude 4.6, and Gemini 3 series.",
+  "updated_at": "2026-03-01T08:30:42Z",
+  "summary": "85 OpenAI models, 9 Anthropic models, and 27 Google models are currently accessible via API, including advanced GPT-5 series, Claude 4.x series, and Gemini 3.x series.",
   "providers": {
     "openai": {
       "name": "OpenAI",
@@ -8,12 +8,49 @@
       "api_docs": "https://platform.openai.com/docs",
       "models": [
         {
+          "id": "gpt-4o-search-preview",
+          "name": "GPT-4o Search Preview",
+          "provider": "openai",
+          "api_accessible": true,
+          "model_type": "chat",
+          "description": "Preview version of GPT-4o with search capabilities.",
+          "context_window": null,
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "status": "preview",
+          "created_timestamp": 1771905534,
+          "owned_by": "system"
+        },
+        {
+          "id": "gpt-5.3-codex",
+          "name": "GPT-5.3 Codex",
+          "provider": "openai",
+          "api_accessible": true,
+          "model_type": "chat",
+          "description": "Code-focused version of GPT-5.3.",
+          "context_window": null,
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "status": "active",
+          "created_timestamp": 1770537915,
+          "owned_by": "system"
+        },
+        {
           "id": "gpt-5.2-codex",
           "name": "GPT-5.2 Codex",
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Code-optimized version of GPT-5.2",
+          "description": "Code-focused version of GPT-5.2.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -31,7 +68,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "image",
-          "description": "Latest ChatGPT image generation model",
+          "description": "Latest version of ChatGPT's image generation model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -49,7 +86,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "audio",
-          "description": "GPT-4o Mini text-to-speech model",
+          "description": "Text-to-speech version of GPT-4o Mini.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -67,7 +104,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "audio",
-          "description": "GPT-4o Mini audio transcription model",
+          "description": "Transcription version of GPT-4o Mini.",
           "context_window": null,
           "input_modalities": [
             "audio"
@@ -85,7 +122,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Latest version of GPT-5.2 for conversations",
+          "description": "Latest chat version of GPT-5.2.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -103,7 +140,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Professional version of GPT-5.2",
+          "description": "Professional version of GPT-5.2.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -121,7 +158,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "GPT-5.2 base model",
+          "description": "GPT-5.2 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -139,7 +176,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Code-optimized version of GPT-5.1",
+          "description": "Code-focused version of GPT-5.1.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -157,7 +194,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "GPT-5.1 base model",
+          "description": "GPT-5.1 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -175,7 +212,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Latest version of GPT-5.1 for conversations",
+          "description": "Latest chat version of GPT-5.1.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -193,7 +230,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "GPT-5 with search API capabilities",
+          "description": "GPT-5 with search API capabilities.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -211,7 +248,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Professional version of GPT-5",
+          "description": "Professional version of GPT-5.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -229,7 +266,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Code-optimized version of GPT-5",
+          "description": "Code-focused version of GPT-5.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -247,7 +284,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Compact version of GPT-5",
+          "description": "Compact version of GPT-5.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -265,7 +302,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Mini version of GPT-5",
+          "description": "Smaller version of GPT-5.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -283,7 +320,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "GPT-5 base model",
+          "description": "GPT-5 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -301,7 +338,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Latest version of GPT-5 for conversations",
+          "description": "Latest chat version of GPT-5.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -319,7 +356,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "reasoning",
-          "description": "O4 Mini model for deep research tasks",
+          "description": "Compact reasoning model with deep research capabilities.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -337,7 +374,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "audio",
-          "description": "GPT-4o with audio capabilities",
+          "description": "Preview version of GPT-4o with audio capabilities.",
           "context_window": null,
           "input_modalities": [
             "text",
@@ -356,8 +393,8 @@
           "name": "GPT-4o Realtime Preview",
           "provider": "openai",
           "api_accessible": true,
-          "model_type": "chat",
-          "description": "GPT-4o with real-time capabilities",
+          "model_type": "audio",
+          "description": "Preview version of GPT-4o with realtime capabilities.",
           "context_window": null,
           "input_modalities": [
             "text",
@@ -377,7 +414,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "GPT-4.1 base model",
+          "description": "GPT-4.1 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -395,7 +432,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "reasoning",
-          "description": "O4 Mini reasoning model",
+          "description": "Compact version of the O4 reasoning model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -413,7 +450,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "reasoning",
-          "description": "O3 reasoning model",
+          "description": "O3 reasoning model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -431,7 +468,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "reasoning",
-          "description": "Professional version of O1 reasoning model",
+          "description": "Professional version of the O1 reasoning model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -449,10 +486,11 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "GPT-4o Mini with search capabilities",
+          "description": "Preview version of GPT-4o Mini with search capabilities.",
           "context_window": null,
           "input_modalities": [
-            "text"
+            "text",
+            "image"
           ],
           "output_modalities": [
             "text"
@@ -462,30 +500,12 @@
           "owned_by": "system"
         },
         {
-          "id": "gpt-4o-search-preview",
-          "name": "GPT-4o Search Preview",
-          "provider": "openai",
-          "api_accessible": true,
-          "model_type": "chat",
-          "description": "GPT-4o with search capabilities",
-          "context_window": null,
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "text"
-          ],
-          "status": "preview",
-          "created_timestamp": 1741388720,
-          "owned_by": "system"
-        },
-        {
           "id": "o3-mini",
           "name": "O3 Mini",
           "provider": "openai",
           "api_accessible": true,
           "model_type": "reasoning",
-          "description": "O3 Mini reasoning model",
+          "description": "Compact version of the O3 reasoning model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -503,7 +523,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "audio",
-          "description": "GPT-4o Mini with audio capabilities",
+          "description": "Preview version of GPT-4o Mini with audio capabilities.",
           "context_window": null,
           "input_modalities": [
             "text",
@@ -522,8 +542,8 @@
           "name": "GPT-4o Mini Realtime Preview",
           "provider": "openai",
           "api_accessible": true,
-          "model_type": "chat",
-          "description": "GPT-4o Mini with real-time capabilities",
+          "model_type": "audio",
+          "description": "Preview version of GPT-4o Mini with realtime capabilities.",
           "context_window": null,
           "input_modalities": [
             "text",
@@ -543,7 +563,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "reasoning",
-          "description": "O1 reasoning model",
+          "description": "O1 reasoning model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -560,8 +580,8 @@
           "name": "GPT-4o Realtime Preview",
           "provider": "openai",
           "api_accessible": true,
-          "model_type": "chat",
-          "description": "GPT-4o with real-time capabilities",
+          "model_type": "audio",
+          "description": "Preview version of GPT-4o with realtime capabilities.",
           "context_window": null,
           "input_modalities": [
             "text",
@@ -581,7 +601,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "audio",
-          "description": "GPT-4o with audio capabilities",
+          "description": "Preview version of GPT-4o with audio capabilities.",
           "context_window": null,
           "input_modalities": [
             "text",
@@ -601,7 +621,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Mini version of GPT-4o",
+          "description": "Compact version of GPT-4o.",
           "context_window": null,
           "input_modalities": [
             "text",
@@ -620,7 +640,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "GPT-4o multimodal model",
+          "description": "GPT-4o multimodal language model.",
           "context_window": null,
           "input_modalities": [
             "text",
@@ -639,7 +659,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Turbo version of GPT-4",
+          "description": "Faster version of GPT-4.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -657,7 +677,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "GPT-4 base model",
+          "description": "GPT-4 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -675,7 +695,7 @@
           "provider": "openai",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Turbo version of GPT-3.5",
+          "description": "GPT-3.5 Turbo language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -700,7 +720,7 @@
           "provider": "anthropic",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Claude Sonnet 4.6 conversational AI model",
+          "description": "Claude Sonnet 4.6 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -718,7 +738,7 @@
           "provider": "anthropic",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Claude Opus 4.6 conversational AI model",
+          "description": "Claude Opus 4.6 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -736,7 +756,7 @@
           "provider": "anthropic",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Claude Opus 4.5 conversational AI model",
+          "description": "Claude Opus 4.5 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -754,7 +774,7 @@
           "provider": "anthropic",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Claude Haiku 4.5 conversational AI model",
+          "description": "Claude Haiku 4.5 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -772,7 +792,7 @@
           "provider": "anthropic",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Claude Sonnet 4.5 conversational AI model",
+          "description": "Claude Sonnet 4.5 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -790,7 +810,7 @@
           "provider": "anthropic",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Claude Opus 4.1 conversational AI model",
+          "description": "Claude Opus 4.1 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -808,7 +828,7 @@
           "provider": "anthropic",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Claude Opus 4 conversational AI model",
+          "description": "Claude Opus 4 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -826,25 +846,7 @@
           "provider": "anthropic",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Claude Sonnet 4 conversational AI model",
-          "context_window": null,
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "text"
-          ],
-          "status": "active",
-          "created_timestamp": null,
-          "owned_by": "anthropic"
-        },
-        {
-          "id": "claude-3-5-haiku-20241022",
-          "name": "Claude Haiku 3.5",
-          "provider": "anthropic",
-          "api_accessible": true,
-          "model_type": "chat",
-          "description": "Claude Haiku 3.5 conversational AI model",
+          "description": "Claude Sonnet 4 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -862,7 +864,7 @@
           "provider": "anthropic",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Claude Haiku 3 conversational AI model",
+          "description": "Claude Haiku 3 language model.",
           "context_window": null,
           "input_modalities": [
             "text"
@@ -878,7 +880,7 @@
     },
     "google": {
       "name": "Google",
-      "website": "https://ai.google",
+      "website": "https://cloud.google.com",
       "api_docs": "https://ai.google.dev/docs",
       "models": [
         {
@@ -887,7 +889,7 @@
           "provider": "google",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Gemini 3 Pro preview model",
+          "description": "Preview version of Gemini 3 Pro.",
           "context_window": 1048576,
           "input_modalities": [
             "text"
@@ -905,7 +907,25 @@
           "provider": "google",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Gemini 3 Flash preview model",
+          "description": "Preview version of Gemini 3 Flash.",
+          "context_window": 1048576,
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "status": "preview",
+          "created_timestamp": null,
+          "owned_by": "google"
+        },
+        {
+          "id": "models/gemini-3.1-pro-preview",
+          "name": "Gemini 3.1 Pro Preview",
+          "provider": "google",
+          "api_accessible": true,
+          "model_type": "chat",
+          "description": "Preview version of Gemini 3.1 Pro.",
           "context_window": 1048576,
           "input_modalities": [
             "text"
@@ -919,17 +939,37 @@
         },
         {
           "id": "models/gemini-3-pro-image-preview",
-          "name": "Nano Banana Pro",
+          "name": "Gemini 3 Pro Image Preview",
           "provider": "google",
           "api_accessible": true,
-          "model_type": "image",
-          "description": "Gemini 3 Pro image generation preview model",
+          "model_type": "chat",
+          "description": "Preview version of Gemini 3 Pro with image capabilities.",
           "context_window": 131072,
           "input_modalities": [
-            "text"
+            "text",
+            "image"
           ],
           "output_modalities": [
+            "text"
+          ],
+          "status": "preview",
+          "created_timestamp": null,
+          "owned_by": "google"
+        },
+        {
+          "id": "models/gemini-3.1-flash-image-preview",
+          "name": "Gemini 3.1 Flash Image Preview",
+          "provider": "google",
+          "api_accessible": true,
+          "model_type": "chat",
+          "description": "Preview version of Gemini 3.1 Flash with image capabilities.",
+          "context_window": 65536,
+          "input_modalities": [
+            "text",
             "image"
+          ],
+          "output_modalities": [
+            "text"
           ],
           "status": "preview",
           "created_timestamp": null,
@@ -941,7 +981,7 @@
           "provider": "google",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Gemini 2.5 Flash model",
+          "description": "Fast version of Gemini 2.5.",
           "context_window": 1048576,
           "input_modalities": [
             "text"
@@ -959,7 +999,7 @@
           "provider": "google",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Gemini 2.5 Pro model",
+          "description": "Professional version of Gemini 2.5.",
           "context_window": 1048576,
           "input_modalities": [
             "text"
@@ -968,42 +1008,6 @@
             "text"
           ],
           "status": "active",
-          "created_timestamp": null,
-          "owned_by": "google"
-        },
-        {
-          "id": "models/gemini-2.5-flash-preview-tts",
-          "name": "Gemini 2.5 Flash Preview TTS",
-          "provider": "google",
-          "api_accessible": true,
-          "model_type": "audio",
-          "description": "Gemini 2.5 Flash text-to-speech preview model",
-          "context_window": 8192,
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "audio"
-          ],
-          "status": "preview",
-          "created_timestamp": null,
-          "owned_by": "google"
-        },
-        {
-          "id": "models/gemini-2.5-pro-preview-tts",
-          "name": "Gemini 2.5 Pro Preview TTS",
-          "provider": "google",
-          "api_accessible": true,
-          "model_type": "audio",
-          "description": "Gemini 2.5 Pro text-to-speech preview model",
-          "context_window": 8192,
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "audio"
-          ],
-          "status": "preview",
           "created_timestamp": null,
           "owned_by": "google"
         },
@@ -1013,31 +1017,13 @@
           "provider": "google",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Gemini 2.5 Flash-Lite model",
+          "description": "Lightweight version of Gemini 2.5 Flash.",
           "context_window": 1048576,
           "input_modalities": [
             "text"
           ],
           "output_modalities": [
             "text"
-          ],
-          "status": "active",
-          "created_timestamp": null,
-          "owned_by": "google"
-        },
-        {
-          "id": "models/gemini-2.5-flash-image",
-          "name": "Nano Banana",
-          "provider": "google",
-          "api_accessible": true,
-          "model_type": "image",
-          "description": "Gemini 2.5 Flash image model",
-          "context_window": 32768,
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "image"
           ],
           "status": "active",
           "created_timestamp": null,
@@ -1049,7 +1035,7 @@
           "provider": "google",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Gemini 2.5 Computer Use preview model",
+          "description": "Preview version of Gemini 2.5 with computer use capabilities.",
           "context_window": 131072,
           "input_modalities": [
             "text"
@@ -1063,11 +1049,11 @@
         },
         {
           "id": "models/gemini-2.5-flash-native-audio-latest",
-          "name": "Gemini 2.5 Flash Native Audio Latest",
+          "name": "Gemini 2.5 Flash Native Audio",
           "provider": "google",
           "api_accessible": true,
           "model_type": "audio",
-          "description": "Gemini 2.5 Flash native audio model",
+          "description": "Latest version of Gemini 2.5 Flash with native audio support.",
           "context_window": 131072,
           "input_modalities": [
             "text",
@@ -1087,7 +1073,7 @@
           "provider": "google",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Gemini 2.0 Flash model",
+          "description": "Fast version of Gemini 2.0.",
           "context_window": 1048576,
           "input_modalities": [
             "text"
@@ -1100,30 +1086,12 @@
           "owned_by": "google"
         },
         {
-          "id": "models/gemini-2.0-flash-exp-image-generation",
-          "name": "Gemini 2.0 Flash Image Generation Experimental",
-          "provider": "google",
-          "api_accessible": true,
-          "model_type": "image",
-          "description": "Gemini 2.0 Flash experimental image generation model",
-          "context_window": 1048576,
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "image"
-          ],
-          "status": "preview",
-          "created_timestamp": null,
-          "owned_by": "google"
-        },
-        {
           "id": "models/gemini-2.0-flash-lite",
           "name": "Gemini 2.0 Flash-Lite",
           "provider": "google",
           "api_accessible": true,
           "model_type": "chat",
-          "description": "Gemini 2.0 Flash-Lite model",
+          "description": "Lightweight version of Gemini 2.0 Flash.",
           "context_window": 1048576,
           "input_modalities": [
             "text"

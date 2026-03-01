@@ -1,10 +1,28 @@
 {
-  "fetched_at": "2026-02-19T08:42:30.554585+00:00",
+  "fetched_at": "2026-03-01T08:30:42.397041+00:00",
   "openai": {
     "provider": "openai",
-    "fetched_at": "2026-02-19T08:42:30.041727+00:00",
-    "model_count": 84,
+    "fetched_at": "2026-03-01T08:30:42.141866+00:00",
+    "model_count": 85,
     "models": [
+      {
+        "id": "gpt-4o-search-preview-2025-03-11",
+        "object": "model",
+        "created": 1771905621,
+        "owned_by": "system"
+      },
+      {
+        "id": "gpt-4o-search-preview",
+        "object": "model",
+        "created": 1771905534,
+        "owned_by": "system"
+      },
+      {
+        "id": "gpt-5.3-codex",
+        "object": "model",
+        "created": 1770537915,
+        "owned_by": "system"
+      },
       {
         "id": "gpt-5.2-codex",
         "object": "model",
@@ -312,18 +330,6 @@
         "owned_by": "system"
       },
       {
-        "id": "gpt-4o-search-preview",
-        "object": "model",
-        "created": 1741388720,
-        "owned_by": "system"
-      },
-      {
-        "id": "gpt-4o-search-preview-2025-03-11",
-        "object": "model",
-        "created": 1741388170,
-        "owned_by": "system"
-      },
-      {
         "id": "gpt-4o-2024-11-20",
         "object": "model",
         "created": 1739331543,
@@ -513,8 +519,8 @@
   },
   "anthropic": {
     "provider": "anthropic",
-    "fetched_at": "2026-02-19T08:42:30.433862+00:00",
-    "model_count": 10,
+    "fetched_at": "2026-03-01T08:30:42.286444+00:00",
+    "model_count": 9,
     "models": [
       {
         "type": "model",
@@ -566,12 +572,6 @@
       },
       {
         "type": "model",
-        "id": "claude-3-5-haiku-20241022",
-        "display_name": "Claude Haiku 3.5",
-        "created_at": "2024-10-22T00:00:00Z"
-      },
-      {
-        "type": "model",
         "id": "claude-3-haiku-20240307",
         "display_name": "Claude Haiku 3",
         "created_at": "2024-03-07T00:00:00Z"
@@ -580,8 +580,8 @@
   },
   "google": {
     "provider": "google",
-    "fetched_at": "2026-02-19T08:42:30.553322+00:00",
-    "model_count": 26,
+    "fetched_at": "2026-03-01T08:30:42.395651+00:00",
+    "model_count": 27,
     "models": [
       {
         "name": "models/gemini-2.5-flash",
@@ -711,25 +711,6 @@
         "maxTemperature": 2
       },
       {
-        "name": "models/gemini-exp-1206",
-        "version": "2.5-exp-03-25",
-        "displayName": "Gemini Experimental 1206",
-        "description": "Experimental release (March 25th, 2025) of Gemini 2.5 Pro",
-        "inputTokenLimit": 1048576,
-        "outputTokenLimit": 65536,
-        "supportedGenerationMethods": [
-          "generateContent",
-          "countTokens",
-          "createCachedContent",
-          "batchGenerateContent"
-        ],
-        "temperature": 1,
-        "topP": 0.95,
-        "topK": 64,
-        "maxTemperature": 2,
-        "thinking": true
-      },
-      {
         "name": "models/gemini-2.5-flash-preview-tts",
         "version": "gemini-2.5-flash-exp-tts-2025-05-19",
         "displayName": "Gemini 2.5 Flash Preview TTS",
@@ -856,25 +837,6 @@
         "maxTemperature": 1
       },
       {
-        "name": "models/gemini-2.5-flash-preview-09-2025",
-        "version": "Gemini 2.5 Flash Preview 09-2025",
-        "displayName": "Gemini 2.5 Flash Preview Sep 2025",
-        "description": "Gemini 2.5 Flash Preview Sep 2025",
-        "inputTokenLimit": 1048576,
-        "outputTokenLimit": 65536,
-        "supportedGenerationMethods": [
-          "generateContent",
-          "countTokens",
-          "createCachedContent",
-          "batchGenerateContent"
-        ],
-        "temperature": 1,
-        "topP": 0.95,
-        "topK": 64,
-        "maxTemperature": 2,
-        "thinking": true
-      },
-      {
         "name": "models/gemini-2.5-flash-lite-preview-09-2025",
         "version": "2.5-preview-09-25",
         "displayName": "Gemini 2.5 Flash-Lite Preview Sep 2025",
@@ -932,12 +894,68 @@
         "thinking": true
       },
       {
+        "name": "models/gemini-3.1-pro-preview",
+        "version": "3.1-pro-preview-01-2026",
+        "displayName": "Gemini 3.1 Pro Preview",
+        "description": "Gemini 3.1 Pro Preview",
+        "inputTokenLimit": 1048576,
+        "outputTokenLimit": 65536,
+        "supportedGenerationMethods": [
+          "generateContent",
+          "countTokens",
+          "createCachedContent",
+          "batchGenerateContent"
+        ],
+        "temperature": 1,
+        "topP": 0.95,
+        "topK": 64,
+        "maxTemperature": 2,
+        "thinking": true
+      },
+      {
+        "name": "models/gemini-3.1-pro-preview-customtools",
+        "version": "3.1-pro-preview-01-2026",
+        "displayName": "Gemini 3.1 Pro Preview Custom Tools",
+        "description": "Gemini 3.1 Pro Preview optimized for custom tool usage",
+        "inputTokenLimit": 1048576,
+        "outputTokenLimit": 65536,
+        "supportedGenerationMethods": [
+          "generateContent",
+          "countTokens",
+          "createCachedContent",
+          "batchGenerateContent"
+        ],
+        "temperature": 1,
+        "topP": 0.95,
+        "topK": 64,
+        "maxTemperature": 2,
+        "thinking": true
+      },
+      {
         "name": "models/gemini-3-pro-image-preview",
         "version": "3.0",
         "displayName": "Nano Banana Pro",
         "description": "Gemini 3 Pro Image Preview",
         "inputTokenLimit": 131072,
         "outputTokenLimit": 32768,
+        "supportedGenerationMethods": [
+          "generateContent",
+          "countTokens",
+          "batchGenerateContent"
+        ],
+        "temperature": 1,
+        "topP": 0.95,
+        "topK": 64,
+        "maxTemperature": 1,
+        "thinking": true
+      },
+      {
+        "name": "models/gemini-3.1-flash-image-preview",
+        "version": "3.0",
+        "displayName": "Nano Banana 2",
+        "description": "Gemini 3.1 Flash Image Preview.",
+        "inputTokenLimit": 65536,
+        "outputTokenLimit": 65536,
         "supportedGenerationMethods": [
           "generateContent",
           "countTokens",
