@@ -1,3 +1,13 @@
+> # ⚠️ Project Retired (2026-05-01)
+>
+> **LLM Radar is no longer maintained.** The daily data pipeline has been disabled and the repository is archived.
+>
+> The live dashboard and MCP server may stop working as upstream APIs change. The model data in `data/` reflects the last update before retirement.
+>
+> Code remains here for reference only. Forks are welcome.
+
+---
+
 <div align="center">
 
 # LLM Radar
